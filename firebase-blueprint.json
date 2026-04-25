@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "Informações de contato e interesse inicial do lead.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Nome completo" },
+        "email": { "type": "string", "format": "email", "description": "E-mail de contato" },
+        "phone": { "type": "string", "description": "WhatsApp/Telefone" },
+        "source": { "type": "string", "description": "Origem do lead (Instagram, Facebook, Google)" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Data de criação" },
+        "status": { "type": "string", "enum": ["new", "contacted", "qualified", "converted"], "description": "Status do lead" }
+      },
+      "required": ["name", "phone", "createdAt"]
+    },
+    "QuizResponse": {
+      "title": "Quiz Response",
+      "description": "Respostas do quiz de triagem inicial.",
+      "type": "object",
+      "properties": {
+        "leadId": { "type": "string", "description": "ID do lead associado" },
+        "responses": { "type": "object", "description": "Mapa de perguntas e respostas" },
+        "aiAnalysis": { "type": "string", "description": "Análise preliminar da IA" },
+        "recommendedMethod": { "type": "string", "enum": ["1_sessao", "5_sessoes", "12_sessoes", "21_sessoes"], "description": "Método recomendado pela IA" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["responses", "createdAt"]
+    },
+    "Appointment": {
+      "title": "Appointment",
+      "description": "Agendamentos de sessões.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Nome do paciente" },
+        "phone": { "type": "string", "description": "WhatsApp do paciente" },
+        "dateTime": { "type": "string", "format": "date-time", "description": "Data e hora do agendamento" },
+        "status": { "type": "string", "enum": ["pagamento_pendente", "scheduled", "confirmed", "cancelled", "completed"] },
+        "service": { "type": "string", "description": "Nome do serviço agendado" },
+        "price": { "type": "string", "description": "Valor da sessão" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "phone", "dateTime", "status", "createdAt"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "Mensagens de contato enviadas pelo site.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Nome do remetente" },
+        "email": { "type": "string", "format": "email", "description": "E-mail do remetente" },
+        "message": { "type": "string", "description": "Conteúdo da mensagem" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "message", "createdAt"]
+    },
+    "Ebook": {
+      "title": "Ebook",
+      "description": "Informações sobre e-books disponíveis para venda.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Título do e-book" },
+        "description": { "type": "string", "description": "Descrição curta" },
+        "price": { "type": "string", "description": "Preço formatado" },
+        "link": { "type": "string", "description": "Link de compra (Asaas, Hotmart, etc)" },
+        "coverUrl": { "type": "string", "description": "URL da imagem da capa" },
+        "isActive": { "type": "boolean", "description": "Se o e-book está visível no site" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "link", "isActive", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Coleção de leads captados."
+    },
+    "/leads/{leadId}/quizResponses/{responseId}": {
+      "schema": "QuizResponse",
+      "description": "Respostas de triagem por lead."
+    },
+    "/appointments/{appointmentId}": {
+      "schema": "Appointment",
+      "description": "Agendamentos globais."
+    },
+    "/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Mensagens de contato recebidas."
+    },
+    "/ebooks/{ebookId}": {
+      "schema": "Ebook",
+      "description": "Coleção de e-books."
+    }
+  }
+}

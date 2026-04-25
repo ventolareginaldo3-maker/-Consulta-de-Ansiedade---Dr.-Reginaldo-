@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como funciona a mente ansiosa | Psicanalista em Mococa - Dr. Reginaldo Ventola</title>
+    <meta name="description" content="Entenda o ciclo da mente ansiosa e como o Método Acalme-se ajuda mulheres em Mococa a recuperarem a paz interior. Atendimento clínico especializado.">
+    
+    <!-- FAVICON -->
+    <link rel="icon" href="https://ais-dev-fw4ebuwlb32dgz732frmyt-79413564668.us-east5.run.app/favicon.ico">
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <!-- CSS MINIMAL INLINE -->
+    <style>
+        :root {
+            --bg: #fdfcfb;
+            --ink: #1a1a1a;
+            --accent: #4a90e2;
+            --secondary: #6c757d;
+            --peace: #2ecc71;
+            --warning: #f1c40f;
+            --danger: #e74c3c;
+            --f-serif: 'Playfair Display', serif;
+            --f-sans: 'Inter', sans-serif;
+            --shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: var(--f-sans); 
+            line-height: 1.6; 
+            color: var(--ink); 
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: 4rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        
+        h1, h2, h3 { font-family: var(--f-serif); line-height: 1.2; margin-bottom: 1.5rem; }
+        h1 { font-size: 2.5rem; color: var(--ink); text-align: center; }
+        h2 { font-size: 2rem; color: var(--ink); }
+        h3 { font-size: 1.5rem; color: var(--secondary); }
+        
+        p { margin-bottom: 1.2rem; font-size: 1.1rem; color: #444; }
+        
+        .bridge { 
+            font-style: italic; 
+            color: var(--accent); 
+            padding: 1.5rem; 
+            border-left: 4px solid var(--accent); 
+            background: #f0f7ff; 
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .btn-whatsapp { background: var(--peace); color: #fff; width: 100%; max-width: 400px; margin: 1rem auto; display: block; font-size: 1.1rem; }
+        .btn-secondary { background: var(--accent); color: #fff; margin: 0.5rem; }
+        .btn-outline { border: 2px solid var(--accent); color: var(--accent); background: transparent; }
+
+        .grid-mechanism { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .card-mech { background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); border-top: 4px solid var(--accent); }
+        .card-mech strong { display: block; margin-bottom: 0.5rem; color: var(--ink); }
+
+        .symptoms { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+        .symptom-tag { background: #fff; border: 1px solid #ddd; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.9rem; }
+
+        .alert-box { background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center; font-weight: 600; }
+
+        .cycle-list { counter-reset: cycle; list-style: none; padding: 0; }
+        .cycle-list li { margin-bottom: 1rem; padding-left: 3rem; position: relative; font-weight: 500; font-size: 1.1rem; }
+        .cycle-list li::before { 
+            counter-increment: cycle; 
+            content: counter(cycle); 
+            position: absolute; 
+            left: 0; top: 0; 
+            background: var(--accent); 
+            color: #fff; 
+            width: 32px; height: 32px; 
+            border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+        }
+
+        .stages { display: grid; gap: 1.5rem; margin: 2rem 0; }
+        .stage-item { display: flex; gap: 1.5rem; align-items: flex-start; background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); }
+        .stage-num { font-size: 2rem; font-family: var(--f-serif); color: var(--accent); opacity: 0.5; font-weight: 700; }
+
+        blockquote { padding: 2rem; font-style: italic; color: var(--secondary); border-left: 4px solid #ddd; margin: 2rem 0; background: #fafafa; font-size: 1.2rem; }
+
+        figure { margin: 2rem 0; text-align: center; }
+        figure img { width: 100%; border-radius: 12px; box-shadow: var(--shadow); height: auto; }
+        figcaption { margin-top: 0.8rem; font-size: 0.9rem; color: var(--secondary); font-style: italic; }
+
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: var(--shadow); margin: 2rem 0; background: #000; }
+        .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        .details-faq { margin: 1rem 0; }
+        details { background: #fff; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #eee; overflow: hidden; }
+        summary { padding: 1rem 1.5rem; cursor: pointer; font-weight: 600; outline: none; }
+        summary:hover { background: #f9f9f9; }
+        details[open] summary { border-bottom: 1px solid #eee; background: #f9f9f9; }
+        .faq-content { padding: 1.5rem; color: #555; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
+        .map-wrapper { border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); height: 300px; }
+
+        form { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow); }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; }
+        input, textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem; }
+        textarea { height: 120px; resize: vertical; }
+
+        .disclaimer { font-size: 0.85rem; color: #888; margin-top: 2rem; line-height: 1.4; border-top: 1px solid #eee; padding-top: 1rem; }
+
+        footer { text-align: center; padding: 4rem 0; background: #1a1a1a; color: #fff; }
+        footer p { color: #aaa; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .grid-mechanism { grid-template-columns: 1fr; }
+            .stage-item { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+
+    <!-- SCHEMA JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Dr. Reginaldo Ventola - Psicanalista em Mococa",
+      "image": "https://ais-dev-fw4ebuwlb32dgz732frmyt-79413564668.us-east5.run.app/mente-ansiosa-mococa.jpg",
+      "@id": "https://ais-dev-fw4ebuwlb32dgz732frmyt-79413564668.us-east5.run.app/como-funciona-mente-ansiosa",
+      "url": "https://ais-dev-fw4ebuwlb32dgz732frmyt-79413564668.us-east5.run.app/como-funciona-mente-ansiosa",
+      "telephone": "+5519992416095",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua XV de Novembro, 268, Sala 10",
+        "addressLocality": "Mococa",
+        "postalCode": "13730-000",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -21.4658,
+        "longitude": -47.0047
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "O método é exclusivo para mulheres?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O Método Acalme-se foi desenvolvido especificamente para atender às particularidades do universo feminino, considerando as flutuações hormonais, pressões sociais e o acúmulo de funções que geram ansiedade na mulher moderna."
+        }
+      }, {
+        "@type": "Question",
+        "name": "O método substitui o tratamento médico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. A psicanálise atua de forma complementar ao tratamento psiquiátrico. Qualquer ajuste medicamentoso deve ser feito exclusivamente pelo seu médico."
+        }
+      }]
+    }
+    </script>
+</head>
+<body>
+
+    <main class="container">
+        
+        <!-- MECANISMO -->
+        <section id="mecanismo">
+            <h1>Como funciona a mente ansiosa</h1>
+            <p>A ansiedade não define quem você é. Ela mostra que sua mente está presa em um padrão que pode ser mudado.</p>
+            <p>E para sair desse ciclo, você precisa primeiro entender como ele funciona dentro da sua mente.</p>
+
+            <div class="grid-mechanism">
+                <article class="card-mech">
+                    <strong>Antecipação</strong>
+                    <p>Prever problemas antes que eles aconteçam</p>
+                </article>
+                <article class="card-mech">
+                    <strong>Cenários</strong>
+                    <p>Imaginar cenários negativos repetidamente</p>
+                </article>
+                <article class="card-mech">
+                    <strong>Interpretação</strong>
+                    <p>Ver situações neutras como ameaça</p>
+                </article>
+                <article class="card-mech">
+                    <strong>Hipervigilância</strong>
+                    <p>Sentir que precisa estar sempre alerta</p>
+                </article>
+                <article class="card-mech">
+                    <strong>Esgotamento</strong>
+                    <p>Cansaço profundo que não passa com o sono</p>
+                </article>
+                <article class="card-mech">
+                    <strong>Ameaça</strong>
+                    <p>Vive o tempo todo sobre ameaça</p>
+                </article>
+            </div>
+
+            <div class="symptoms">
+                <span class="symptom-tag">aperto no peito</span>
+                <span class="symptom-tag">respiração curta</span>
+                <span class="symptom-tag">coração acelerado</span>
+            </div>
+        </section>
+
+        <!-- ALERTA DE PROGRESSÃO -->
+        <div class="alert-box">
+            Você sabia que a Ansiedade não tratada pode, com o tempo, evoluir para a depressão?
+        </div>
+
+        <!-- CICLO ÚNICO -->
+        <section id="ciclo">
+            <h2>Ciclo silencioso da ansiedade</h2>
+            <p>Muitas pessoas com ansiedade vivem um ciclo silencioso que as mantém presas:</p>
+            <ol class="cycle-list">
+                <li>antecipam problemas</li>
+                <li>imaginam o pior cenário</li>
+                <li>sentem medo ou tensão</li>
+                <li>evitam algumas situações</li>
+                <li>a mente interpreta isso como confirmação de perigo</li>
+            </ol>
+            <p><strong>E o ciclo se repete.</strong> O tratamento adequado ajuda a interromper esse padrão e reconstruir a sensação de segurança interna.</p>
+            
+            <figure>
+                <img src="mente-ansiosa-mococa.jpg" alt="Representação visual do ciclo da ansiedade e exaustão emocional" loading="lazy">
+                <figcaption>O ciclo do medo se retroalimenta até que uma intervenção clínica seja feita.</figcaption>
+            </figure>
+
+            <div class="bridge">
+                Mas antes de tudo, você precisa entender como a relação da ansiedade com a depressão acontece, veja abaixo:
+            </div>
+        </section>
+
+        <!-- OFERTA EM MOCOCA -->
+        <section id="oferta">
+            <h3>Saúde Mental e Bem Estar</h3>
+            <h2>Ansiedade e depressão em Mococa</h2>
+            <p>Se você busca por um psicanalista em Mococa, já percebeu que não é apenas ansiedade. Existe um desgaste emocional profundo acontecendo.</p>
+            <p>A ansiedade constante sobrecarrega sua mente e corpo. Com o tempo, isso leva ao esgotamento emocional e pode evoluir para quadros depressivos. O acompanhamento especializado com um psicanalista em Mococa é fundamental para recuperar sua qualidade de vida através do Método Acalme-se.</p>
+            <p><em>Acompanhamento especializado para ansiedade e depressão em Mococa - Psicanalista Mococa</em></p>
+        </section>
+
+        <!-- EXAUSTÃO INVISÍVEL -->
+        <section id="exaustao">
+            <h2>O Ciclo da Exaustão Invisível</h2>
+            <h3>Quando o medo deixa de ser um alerta e se torna sua prisão.</h3>
+            <p>Viver com ansiedade e depressão em Mococa não é apenas "estar nervosa" ou "triste". É sentir que o mundo ficou grande demais e suas forças, pequenas demais. Se você se identifica com os sinais abaixo, entenda: seu sistema entrou em modo de sobrevivência.</p>
+
+            <article>
+                <h4>As Barreiras Invisíveis (Fobias e Limitações)</h4>
+                <p>A ansiedade não tratada começa a roubar seu território. Primeiro, é o medo de dirigir em certas avenidas; depois, o desconforto em situações sociais que antes eram prazerosas. De repente, sair de casa se torna um desafio hercúleo. Você não está ficando antissocial; você está tentando se proteger de um perigo que sua mente insiste em projetar.</p>
+            </article>
+
+            <article>
+                <h4>O Ruído que Não Cala (Padrões Mentais)</h4>
+                <p>Sua mente se tornou uma especialista em criar cenários negativos. É a antecipação constante do pior, uma hipervigilância que não te deixa relaxar nem um segundo. Você interpreta cada olhar, cada silêncio, de forma distorcida. É o cansaço de uma guerra que só acontece dentro da sua cabeça.</p>
+            </article>
+
+            <article>
+                <h4>O Grito do Corpo (Sintomas Físicos)</h4>
+                <p>Seu corpo não mente. O aperto no peito que rouba o ar, a respiração curta, o coração acelerado sem motivo aparente... Tudo isso é o reflexo de um cansaço mental que transbordou.</p>
+            </article>
+
+            <blockquote>"O que você sente no corpo é apenas a ponta do iceberg. Por trás do aperto no peito e do cansaço extremo, existe um mecanismo invisível que está drenando sua vida."</blockquote>
+        </section>
+
+        <!-- ESTRUTURA DO ADOECIMENTO -->
+        <section id="estrutura">
+            <h2>A Estrutura do Adoecimento Silencioso</h2>
+            <h3>Como sua mente entra em colapso para tentar te proteger.</h3>
+            <p>O adoecimento não acontece de um dia para o outro. Ele segue uma lógica de desgaste que consome sua saúde mental em três estágios críticos:</p>
+
+            <div class="stages">
+                <article class="stage-item">
+                    <span class="stage-num">01</span>
+                    <div>
+                        <h4>A Sobrecarga (O Estado de Alerta)</h4>
+                        <p>Tudo começa com a mente acelerada, tentando antecipar perigos e encontrar saídas para problemas que ainda nem existem. Seu sistema entra em "voltagem máxima", fazendo o coração disparar e o ar parecer insuficiente. É o início da exaustão.</p>
+                    </div>
+                </article>
+                <article class="stage-item">
+                    <span class="stage-num">02</span>
+                    <div>
+                        <h4>O Desgaste (O Esforço Invisível)</h4>
+                        <p>Manter esse estado de alerta consome toda a sua reserva de energia. Você vive em um esforço contínuo para parecer "bem" e funcional em Mococa, enquanto sua estrutura interna se desfaz. É aqui que a ansiedade transborda e vira dor física crônica.</p>
+                    </div>
+                </article>
+                <article class="stage-item">
+                    <span class="stage-num">03</span>
+                    <div>
+                        <h4>O Desligamento (O Vazio Emocional)</h4>
+                        <p>Como qualquer sistema que opera acima do limite por tempo demais, sua mente eventualmente entra em colapso para se proteger. Para evitar a quebra total, ela começa a desligar. O desânimo e o vazio que você sente hoje são o sinal de que sua energia vital chegou ao fim.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="bridge">
+                A transformação que você busca começa com a compreensão profunda de que você não está quebrada.
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA RESGATE -->
+        <section id="resgate">
+            <h2>A Chamada para o Resgate</h2>
+            <p>Tentar controlar apenas os sintomas é como tentar manter uma lâmpada acesa quando a fiação interna já se rompeu. O esgotamento que você sente é o sinal final de que sua estrutura emocional precisa de um novo alicerce.</p>
+            <p>Como seu Agente de Transformação, meu papel é intervir exatamente nessa estrutura, interrompendo o ciclo de desligamento e reconstruindo sua segurança interna.</p>
+            
+            <a href="https://wa.me/5519992416095?text=Olá%20Dr.%20Reginaldo,%20quero%20interromper%20o%20adoecimento%20e%20recuperar%20minha%20vida" class="btn btn-whatsapp">QUERO INTERROMPER O ADOECIMENTO E RECUPERAR MINHA VIDA</a>
+            <p style="text-align:center; font-size:0.9rem; margin-top:0.5rem;"><em>Verifique a disponibilidade para o Método Acalme-se com Dr. Reginaldo</em></p>
+        </section>
+
+        <!-- CONEXÃO COM EMOÇÃO -->
+        <section id="conexao">
+            <h2>Conexão com Emoção</h2>
+            <p>Você não está quebrada. Sua mente só está exausta de carregar um peso que não deveria ser seu.</p>
+            <p>A ansiedade e a depressão não são apenas diagnósticos. Elas são o grito de socorro de uma alma em curto-circuito. Sua mente foi feita para brilhar, para criar e para viver com leveza.</p>
+            <p>Nas linhas acima, você deu nome aos sintomas que roubam suas noites e seus sorrisos em Mococa. Agora, quero que você entenda o que realmente está acontecendo por trás desse "sentir-se travada".</p>
+            <p>Mas hoje, você gasta 100% da sua energia apenas tentando "parecer bem" para os outros. É como tentar manter uma lâmpada acesa enquanto a fiação está em chamas.</p>
+            <p>O resultado é esse esgotamento profundo que você sente: uma mente que acelera até cansar, e um corpo que, para se proteger, começa a "desligar".</p>
+
+            <div class="bridge">
+                Mapeando o Caminho de Volta para Você: Para que você saia desse estado de alerta constante e volte a respirar com calma...
+            </div>
+
+            <h3>Cuidar das Feridas Abertas (Onde a paz escapa):</h3>
+            <p>Nós não vamos apenas olhar para o agora. Vamos acolher e tratar os traumas e gatilhos ocultos que ainda drenam sua segurança interna em silêncio.</p>
+
+            <h3>Devolver o Seu Fluxo de Vida:</h3>
+            <p>Viver com ansiedade é como tentar correr com o freio de mão puxado. Nós vamos liberar essa tensão acumulada para que sua energia volte a fluir para o que realmente importa: sua felicidade e sua família.</p>
+
+            <h3>Reencontrar a Sua Clareza:</h3>
+            <p>Sairemos juntas do caos mental para construir uma rota segura. Um caminho onde o medo não dá mais as ordens, e você volta a ser a protagonista da sua própria história.</p>
+
+            <blockquote>"Tratar apenas o sintoma é como tentar secar o chão com a torneira aberta. O que você verá a seguir é um desenho cuidadoso de liberdade uma estrutura feita para que você não precise mais apenas 'sobreviver' ao dia, mas sim viver cada momento com segurança real."</blockquote>
+        </section>
+
+        <!-- METODOLOGIA -->
+        <section id="metodologia">
+            <h2>Metodologia</h2>
+            <h3>Um caminho estruturado para sua liberdade emocional.</h3>
+            <p>O Método Acalme-se não é uma solução genérica. É um processo desenhado com carinho e técnica para quem busca resultados reais e duradouros.</p>
+
+            <div class="stages">
+                <article class="stage-item">
+                    <span class="stage-num">01</span>
+                    <div>
+                        <h4>Descoberta Profunda</h4>
+                        <p>Identificamos os gatilhos e padrões que mantêm sua ansiedade ativa.</p>
+                    </div>
+                </article>
+                <article class="stage-item">
+                    <span class="stage-num">02</span>
+                    <div>
+                        <h4>Regulação Imediata</h4>
+                        <p>Técnicas práticas para acalmar o sistema nervoso em momentos de crise.</p>
+                    </div>
+                </article>
+                <article class="stage-item">
+                    <span class="stage-num">03</span>
+                    <div>
+                        <h4>Reprogramação Mental</h4>
+                        <p>Mudança profunda na forma como sua mente interpreta o medo e a insegurança.</p>
+                    </div>
+                </article>
+                <article class="stage-item">
+                    <span class="stage-num">04</span>
+                    <div>
+                        <h4>Consolidação da Paz</h4>
+                        <p>Ferramentas para manter o equilíbrio e a paz a longo prazo.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="video-wrapper">
+                <h3>O Próximo Passo do Seu Resgate</h3>
+                <video controls poster="thumb-video.jpg">
+                    <source src="metodo-acalme-se.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+            <p style="text-align:center;"><a href="#contato" class="btn btn-outline">Conhecer o Método em Detalhes</a></p>
+        </section>
+
+        <!-- PROVA SOCIAL -->
+        <section id="depoimentos">
+            <h2>Vidas Transformadas em Mococa</h2>
+            <p>O que dizem as mulheres que decidiram redesenhar sua própria história:</p>
+            
+            <blockquote>
+                "Eu achava que viver com medo era o meu 'normal'. No Método Acalme-se, entendi que a minha ansiedade era um pedido de ajuda da minha história. Hoje, as crises pararam e eu finalmente voltei a dormir tranquila."
+                <cite style="display:block; margin-top:1rem; font-weight:600; font-style:normal;">— Beatriz G., Paciente em Mococa</cite>
+            </blockquote>
+
+            <blockquote>
+                "Dr. Reginaldo não olha apenas para o sintoma, ele olha para a gente. A fase de Regulação me salvou nos dias mais difíceis. Hoje me sinto segura para sair de casa e viver sem aquele peso no peito."
+                <cite style="display:block; margin-top:1rem; font-weight:600; font-style:normal;">— Fernanda L., Mococa/SP</cite>
+            </blockquote>
+
+            <blockquote>
+                "Dr. Reginaldo é um profissional excepcional. A abordagem integrada realmente faz a diferença. Senti melhoras logo nas primeiras semanas."
+                <cite style="display:block; margin-top:1rem; font-weight:600; font-style:normal;">— Ana Oliveira, Atendimento Online</cite>
+            </blockquote>
+
+            <p style="text-align:center;"><a href="https://wa.me/5519992416095?text=Gostaria%20de%20ver%20mais%20depoimentos" class="btn btn-outline">Ver mais depoimentos reais</a></p>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section id="cta-final">
+            <h2>Próximo Passo</h2>
+            <h3>O limite do seu cansaço termina onde sua decisão começa.</h3>
+            <p>Não espere que a ansiedade se torne insuportável para buscar o seu resgate. O esgotamento emocional não é falta de força, é um sinal de que seu sistema está operando no limite há tempo demais.</p>
+            <p>Quanto mais tempo você sobrevive nesse ciclo de alerta, mais profundas se tornam as raízes do medo. Mas a boa notícia é que você não precisa mais sair disso sozinha.</p>
+            <p>A transformação que você busca, aquela noite de sono tranquila, o fim do aperto no peito e a volta do seu brilho, começa com um único passo hoje.</p>
+
+            <div style="text-align:center; padding: 2rem 0;">
+                <h2>Sua Vida Merece um Novo Desenho</h2>
+                <p>Não permita que o "depois" se torne o seu "nunca". O Método Acalme-se está pronto para ser a estrutura de segurança que você perdeu pelo caminho.</p>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                    <a href="https://wa.me/5519992416095?text=Olá%20Dr.%20Reginaldo,%20gostaria%20de%20agendar%20minha%20avaliação" class="btn btn-whatsapp">Agendar Avaliação Agora</a>
+                    <a href="#metodologia" class="btn btn-outline">Ver Como Funciona</a>
+                </div>
+            </div>
+
+            <div class="grid-mechanism" style="text-align:center;">
+                <article class="card-mech">
+                    <span style="font-size:2rem; font-weight:700; color:var(--accent);">+500</span>
+                    <p>Vidas Reescritas e Transformadas</p>
+                </article>
+                <article class="card-mech">
+                    <span style="font-size:2rem; font-weight:700; color:var(--accent);">100%</span>
+                    <p>Acolhimento e Foco na Sua História</p>
+                </article>
+            </div>
+            <p style="text-align:center;"><strong>Presencial em Mococa ou Atendimento Online Especializado</strong></p>
+        </section>
+
+        <!-- RECADO FINAL -->
+        <section id="recado">
+            <h2>Um Recado de Dr. Reginaldo Ventola</h2>
+            <blockquote>
+                "Se você chegou até aqui, sua mente já compreendeu que não é mais possível sustentar esse ciclo sozinha. Como seu Agente de Transformação, eu não olho apenas para os seus sintomas; eu analiso a estrutura profunda da sua dor."
+            </blockquote>
+            <blockquote>
+                "O que você encontrará a seguir não é uma teoria reconfortante, mas uma prática clínica deliberada. Projetamos cada etapa para que a sua compreensão se transforme em mudança real. A estrutura para sua liberdade emocional está pronta. O próximo passo é o início do seu retorno para si mesma."
+            </blockquote>
+            <a href="https://wa.me/5519992416095?text=Dr.%20Reginaldo,%20quero%20iniciar%20minha%20transformação%20agora" class="btn btn-whatsapp">SIM, QUERO INICIAR MINHA TRANSFORMAÇÃO AGORA</a>
+            <p style="text-align:center; margin-top:1rem; font-size:0.9rem;">Atendimento Ético, Sigiloso e Humanizado | Registro SPMR 0152021/SP</p>
+        </section>
+
+        <!-- EBOOK SECTION -->
+        <section id="ebook" style="background: #fff; padding: 3rem; border-radius: 12px; box-shadow: var(--shadow); margin: 4rem 0;">
+            <div style="text-align:center;">
+                <h3>E-book Guia de Resgate Grátis</h3>
+                <h2>5 Passos para Acalmar a Mente em Crises</h2>
+                <a href="https://wa.me/5519992416095?text=Olá,%20gostaria%20de%20receber%20o%20E-book%20Guia%20de%20Resgate%20Gratuito" class="btn btn-secondary">Baixar Agora</a>
+                <p style="margin-top:1rem; font-size:0.9rem;">Acesso Gratuito | Guia de Resgate Emocional</p>
+            </div>
+            <hr style="margin:2rem 0; opacity:0.1;">
+            <h3>Seu Primeiro Passo para o Alívio: Sem Custos, Com Entrega Real.</h3>
+            <p>Eu entendo que, às vezes, o peso da ansiedade parece grande demais para dar o passo do agendamento agora. Por isso, como seu Arquiteto de Transformação, desenhei um recurso de entrada: o Guia de Resgate: 5 Passos para Acalmar a Mente em Crises.</p>
+            <p>Este não é apenas um e-book; é o seu kit de primeiros socorros emocional. Preparei um material prático, focado na realidade da mulher que vive sob pressão, para te ajudar a entender o ciclo da sua ansiedade e, mais importante, como começar a quebrá-lo hoje mesmo em Mococa.</p>
+            
+            <ul style="list-style:none; padding:0; margin-top:2rem;">
+                <li style="margin-bottom:1.5rem;"><strong>Técnicas de Respiração Guiada:</strong> Recupere o fôlego e acalme o coração acelerado em segundos.</li>
+                <li style="margin-bottom:1.5rem;"><strong>Identificação de Gatilhos Ocultos:</strong> Aprenda a mapear o que 'dispara' sua mente para o pior cenário.</li>
+                <li style="margin-bottom:1.5rem;"><strong>O Ciclo da Autocrítica Feminina:</strong> Entenda por que você é tão dura consigo mesma e como silenciar essa voz.</li>
+                <li style="margin-bottom:1.5rem;"><strong>Exercícios Práticos de Aterramento:</strong> Ferramentas para sair do caos mental e voltar para o presente com segurança.</li>
+            </ul>
+            <a href="https://wa.me/5519992416095?text=Dr.%20Reginaldo,%20quero%20receber%20meu%20Guia%20de%20Resgate" class="btn btn-whatsapp">BAIXAR MEU GUIA DE RESGATE GRATUITO</a>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2>Perguntas Comuns</h2>
+            <div class="details-faq">
+                <details>
+                    <summary>O método é exclusivo para mulheres?</summary>
+                    <div class="faq-content">
+                        Sim. O Método Acalme-se foi desenvolvido especificamente para atender às particularidades do universo feminino, considerando as flutuações hormonais, pressões sociais e o acúmulo de funções que geram ansiedade na mulher moderna.
+                    </div>
+                </details>
+                <details>
+                    <summary>O método substitui o tratamento médico?</summary>
+                    <div class="faq-content">
+                        Não. A psicanálise atua de forma complementar ao tratamento psiquiátrico. Qualquer ajuste medicamentoso deve ser feito exclusivamente pelo seu médico.
+                    </div>
+                </details>
+                <details>
+                    <summary>Como a hipnoterapia ajuda na ansiedade?</summary>
+                    <div class="faq-content">
+                        A hipnoterapia acessa camadas profundas do inconsciente para reprogramar respostas automáticas de medo, facilitando a regulação emocional e a quebra de padrões limitantes.
+                    </div>
+                </details>
+                <details>
+                    <summary>Como funciona a primeira sessão?</summary>
+                    <div class="faq-content">
+                        É um momento de escuta e acolhimento para mapear sua história, seus sintomas e definir o melhor plano de acompanhamento dentro do Método Acalme-se.
+                    </div>
+                </details>
+                <details>
+                    <summary>O atendimento é presencial ou online?</summary>
+                    <div class="faq-content">
+                        Ofereço ambas as modalidades: presencial em nosso consultório em Mococa/SP e atendimento online especializado para todo o Brasil.
+                    </div>
+                </details>
+            </div>
+            <p style="text-align:center; margin-top:2rem;">Ainda tem dúvidas? Estou à disposição para conversar e entender como posso te ajudar.</p>
+            <a href="https://wa.me/5519992416095?text=Olá%20Dr.%20Reginaldo,%20ainda%20tenho%20dúvidas" class="btn btn-outline" style="margin: 0 auto; display: block; max-width: max-content;">Conversar no WhatsApp</a>
+        </section>
+
+        <!-- LOCALIZAÇÃO -->
+        <section id="contato">
+            <h2>Localização</h2>
+            <p><strong>Busca por psicanalista em Mococa?</strong> Atendimento com psicanalista especializado em ansiedade e suporte à redução de medicação (com orientação médica).</p>
+            
+            <div class="contact-grid">
+                <div>
+                    <p>📍 <strong>Endereço:</strong><br>Rua XV de Novembro, 268, Sala 10 – Centro, Mococa/SP</p>
+                    <p>📞 <strong>WhatsApp / Telefone:</strong><br>(19) 99241-6095</p>
+                    
+                    <div style="margin-top:2rem;">
+                        <a href="https://wa.me/5519992416095?text=Olá,%20estou%20entrando%20em%20contato%20pelo%20site" class="btn btn-whatsapp" style="margin: 1rem 0;">WhatsApp Direto</a>
+                        <a href="tel:+5519992416095" class="btn btn-outline" style="width:100%; display:block; text-align:center;">Ligar Agora</a>
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.25368545!2d-47.0047!3d-21.4658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDI3JzU2LjkiUyA0N8KwMDAnMTYuOSJX!5e0!3m2!1spt-BR!2sbr!4v1!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <form>
+                <h3>Entre em Contato</h3>
+                <p>Tem alguma dúvida ou quer saber mais? Fale conosco agora mesmo.</p>
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" placeholder="Como podemos te ajudar? Sinta-se à vontade para compartilhar suas dúvidas." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary" style="width:100%;">Enviar Mensagem</button>
+            </form>
+
+            <div class="disclaimer">
+                <p><strong>Nota importante:</strong> O acompanhamento psicanalítico é um processo terapêutico complementar e não substitui diagnósticos ou tratamentos médicos. Ajustes, trocas ou interrupções de medicação psiquiátrica devem ser realizados exclusivamente pelo médico psiquiatra assistente. Não prometemos cura, mas oferecemos um processo sustentado de autoconhecimento e regulação emocional.</p>
+                <p><strong>Dr. Reginaldo Ventola</strong> | Psicanalista em Mococa/SP | Especialista em Ansiedade | Registro SPMR 0152021/SP</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dr. Reginaldo Ventola - Psicanalista em Mococa/SP</p>
+            <p>Todos os direitos reservados. Ética, Sigilo e Humanização.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

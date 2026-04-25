@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+        (request.auth.token.email == "terapvent46@gmail.com" && request.auth.token.email_verified == true);
+    }
+
+    match /leads/{leadId} {
+      allow create: if request.resource.data.name is string && request.resource.data.phone is string;
+      allow read, write: if isAdmin();
+      
+      match /quizResponses/{responseId} {
+        allow create: if true;
+        allow read, write: if isAdmin();
+      }
+    }
+
+    match /appointments/{appointmentId} {
+      allow create: if request.resource.data.name is string && request.resource.data.phone is string && request.resource.data.dateTime is string && request.resource.data.status is string;
+      allow read, write: if isAdmin();
+    }
+
+    match /messages/{messageId} {
+      allow create: if true;
+      allow read, write: if isAdmin();
+    }
+
+    match /users/{userId} {
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      allow write: if isAdmin();
+    }
+
+    match /ebooks/{ebookId} {
+      allow read: if resource.data.isActive == true || isAdmin();
+      allow write: if isAdmin();
+    }
+  }
+}

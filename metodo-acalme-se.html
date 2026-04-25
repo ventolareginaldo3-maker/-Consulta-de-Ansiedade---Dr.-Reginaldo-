@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método Acalme-se | Psicanalista em Mococa</title>
+
+<!-- Fontes Premium -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ══════════════════════════════════════════
+     RESET & VARIÁVEIS GLOBAIS
+     ══════════════════════════════════════════ */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg-primary: #F5F1ED;
+    --bg-secondary: #EDE7E0;
+    --bg-card: #FFFFFF;
+    --text-primary: #3D3630;
+    --text-secondary: #5C534D;
+    --text-muted: #8A7F75;
+    --text-light: #A89F97;
+    --brand: #9A8B7D;
+    --brand-light: #B09F8F;
+    --brand-accent: #C4A89A;
+    --border: #DDD5CC;
+    --border-subtle: #E8E0D8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 300;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    line-height: 1.9;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ══════════════════════════════════════════
+     TIPOGRAFIA PREMIUM — ESTILO CLÍNICA
+     ══════════════════════════════════════════ */
+  .heading-serif {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
+  .heading-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  h1.heading-serif {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.15;
+    font-weight: 300;
+  }
+
+  h2.heading-serif {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    font-weight: 300;
+  }
+
+  h3.heading-serif {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.3;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 2;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 620px;
+  }
+
+  .text-large {
+    font-size: 1.1rem;
+    line-height: 2.1;
+    font-weight: 300;
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.9;
+  }
+
+  .text-small {
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--text-light);
+  }
+
+  /* ══════════════════════════════════════════
+     ESTRUTURA & CONTAINER
+     ══════════════════════════════════════════ */
+  .section {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section--narrow {
+    max-width: 720px;
+  }
+
+  .section--wide {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section--alt {
+    background-color: var(--bg-secondary);
+  }
+
+  .section__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .divider {
+    width: 50px;
+    height: 1px;
+    background-color: var(--brand-light);
+    margin: 2.5rem 0;
+    display: block;
+  }
+
+  .divider--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ══════════════════════════════════════════
+     SEÇÃO: SAIR DO CICLO
+     ══════════════════════════════════════════ */
+  .sair-do-ciclo {
+    text-align: center;
+  }
+
+  .sair-do-ciclo h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .sair-do-ciclo .subtitulo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .sair-do-ciclo .corpo-texto {
+    margin: 0 auto 2rem;
+  }
+
+  .lista-beneficios {
+    list-style: none;
+    text-align: left;
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    padding: 0;
+  }
+
+  .lista-beneficios li {
+    font-size: 0.92rem;
+    line-height: 2;
+    color: var(--text-secondary);
+    padding-left: 1.8rem;
+    position: relative;
+    margin-bottom: 0.8rem;
+  }
+
+  .lista-beneficios li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 8px;
+    height: 1px;
+    background-color: var(--brand-accent);
+  }
+
+  .duvida-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .resposta-duvida {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* ══════════════════════════════════════════
+     SEÇÃO: METODOLOGIA
+     ══════════════════════════════════════════ */
+  .metodologia-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .metodologia-header p {
+    margin: 1rem auto 0;
+  }
+
+  .etapas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .etapa-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    padding: 2.2rem 1.8rem;
+    text-align: left;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .etapa-card:hover {
+    border-color: var(--brand-light);
+  }
+
+  .etapa-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--brand-accent);
+    line-height: 1;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .etapa-titulo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  .etapa-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+
+  .metodologia-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  /* ══════════════════════════════════════════
+     SEÇÃO: DEPOIMENTOS
+     ══════════════════════════════════════════ */
+  .depoimentos-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .depoimento-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    padding: 2.5rem 2rem;
+    position: relative;
+  }
+
+  .depoimento-card::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: var(--brand-accent);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.5rem;
+    opacity: 0.6;
+  }
+
+  .depoimento-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .depoimento-autor {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.82rem;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+  }
+
+  .depoimento-local {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.2rem;
+    letter-spacing: 0.03em;
+  }
+
+  .depoimentos-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .link-sutil {
+    font-size: 0.82rem;
+    color: var(--brand);
+    text-decoration: none;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    padding-bottom: 2px;
+  }
+
+  .link-sutil:hover {
+    border-bottom-color: var(--brand);
+  }
+
+  /* ══════════════════════════════════════════
+     SEÇÃO: PRÓXIMO PASSO
+     ══════════════════════════════════════════ */
+  .proximo-passo {
+    text-align: center;
+    position: relative;
+  }
+
+  .proximo-passo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--brand-light));
+  }
+
+  .proximo-passo .heading-label {
+    padding-top: 4rem;
+  }
+
+  .proximo-passo h2 {
+    margin-bottom: 2rem;
+  }
+
+  .proximo-passo p {
+    margin: 0 auto 1.5rem;
+  }
+
+  .frase-destaque {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-primary);
+    margin: 3rem auto 2rem;
+    line-height: 1.6;
+    max-width: 540px;
+  }
+
+  .proximo-passo .subtexto {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.9;
+  }
+
+  .proximo-passo .subtexto strong {
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .proximo-passo-cta {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--brand);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .modalidade-tag {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    margin-top: 1rem;
+  }
+
+  .mensagem-final {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 3rem auto 0;
+    line-height: 2;
+  }
+
+  /* ══════════════════════════════════════════
+     SEÇÃO: RECADE DR. REGINALDO
+     ══════════════════════════════════════════ */
+  .recado {
+    text-align: center;
+    background: var(--bg-secondary);
+  }
+
+  .recado-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .recado-header p {
+    margin: 0.5rem auto 0;
+  }
+
+  .recado-citacao {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    position: relative;
+  }
+
+  .recado-citacao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background-color: var(--brand-accent);
+  }
+
+  .recado-citacao blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .recado-citacao blockquote:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .recado-assinatura {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .recado-nome {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    letter-spacing: 0.08em;
+  }
+
+  .recado-titulo {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .recado-cta {
+    margin-top: 3rem;
+  }
+
+  .rodape-legal {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.72rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ══════════════════════════════════════════
+     SEÇÃO: E-BOOK FUNNEL
+     ══════════════════════════════════════════ */
+  .ebook {
+    text-align: center;
+    position: relative;
+  }
+
+  .ebook::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--brand-light));
+  }
+
+  .ebook .heading-label {
+    padding-top: 4rem;
+  }
+
+  .ebook-badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border: 1px solid var(--brand-accent);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 1.5rem;
+  }
+
+  .ebook h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .ebook-descricao {
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .ebook-beneficios {
+    list-style: none;
+    text-align: left;
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    padding: 0;
+  }
+
+  .ebook-beneficios li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    padding: 0.7rem 0 0.7rem 1.6rem;
+    position: relative;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .ebook-beneficios li:last-child {
+    border-bottom: none;
+  }
+
+  .ebook-beneficios li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--brand-accent);
+    font-weight: 300;
+  }
+
+  .ebook-cta-area {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .ebook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .form-group {
+    width: 100%;
+    text-align: left;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-input::placeholder {
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .form-input:focus {
+    border-color: var(--brand);
+  }
+
+  .form-privacy {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .form-privacy a {
+    color: var(--brand);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .form-privacy a:hover {
+    border-bottom-color: var(--brand);
+  }
+
+  /* ══════════════════════════════════════════
+     BOTÃO PULSANTE — ILUSÃO DE ÓTICA
+     ══════════════════════════════════════════ */
+  .btn-pulse {
+    display: inline-block;
+    padding: 1.1rem 2.8rem;
+    background-color: var(--brand);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .btn-pulse:hover {
+    background-color: var(--brand-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-pulse:active {
+    transform: translateY(0);
+  }
+
+  /* Efeito de brilho pulsante */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow:
+        0 0 0 0 rgba(154, 139, 125, 0.3),
+        0 4px 16px rgba(154, 139, 125, 0.15);
+    }
+    50% {
+      box-shadow:
+        0 0 0 12px rgba(154, 139, 125, 0),
+        0 6px 24px rgba(154, 139, 125, 0.25);
+    }
+  }
+
+  /* Brilho deslizante */
+  .btn-pulse::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+    animation: shimmer 4s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { left: -100%; }
+    50% { left: 120%; }
+  }
+
+  /* Botão outline pulsante */
+  .btn-pulse-outline {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--brand);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--brand);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse-border 3s ease-in-out infinite;
+  }
+
+  .btn-pulse-outline:hover {
+    background-color: var(--brand);
+    color: #FFFFFF;
+  }
+
+  @keyframes pulse-border {
+    0%, 100% {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 0 rgba(154, 139, 125, 0.2);
+    }
+    50% {
+      border-color: var(--brand-accent);
+      box-shadow: 0 0 0 8px rgba(154, 139, 125, 0);
+    }
+  }
+
+  /* Botão grande (e-book) */
+  .btn-pulse--large {
+    padding: 1.3rem 3.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* ══════════════════════════════════════════
+     RESPONSIVIDADE
+     ══════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    .section__inner, .section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .etapas-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .depoimentos-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .cta-group {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stats-row {
+      gap: 2rem;
+    }
+
+    .frase-destaque {
+      font-size: 1.25rem;
+    }
+
+    .btn-pulse--large {
+      padding: 1.1rem 2.5rem;
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 15px; }
+
+    .section__inner, .section {
+      padding: 2.5rem 1.2rem;
+    }
+
+    .etapa-card {
+      padding: 1.8rem 1.4rem;
+    }
+
+    .depoimento-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  /* ══════════════════════════════════════════
+     ANIMAÇÕES DE ENTRADA (SCROLL)
+     ══════════════════════════════════════════ */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════
+     SEÇÃO 1: SAIR DO CICLO DE ADOECIMENTO
+     ═══════════════════════════════════════════ -->
+<section class="section section--narrow sair-do-ciclo fade-in" id="sair-do-ciclo">
+  <span class="heading-label">Um Novo Olhar</span>
+
+  <h2 class="heading-serif">Viver com Ansiedade<br>Não é o Seu Normal.<br><em>É o Seu Sinal.</em></h2>
+
+  <span class="divider divider--center"></span>
+
+  <p class="corpo-texto text-large">
+    Se o "Ciclo da Exaustão Invisível" soou familiar, você já deu o primeiro passo: 
+    <strong>reconhecer que algo precisa mudar.</strong>
+  </p>
+
+  <p class="corpo-texto">
+    Viver com ansiedade não é uma sentença. É um convite para se reconectar 
+    com quem você é — além do medo, da culpa, da sobrecarga.
+  </p>
+
+  <ul class="lista-beneficios">
+    <li>Compreender as raízes emocionais da sua ansiedade</li>
+    <li>Aprender técnicas práticas para acalmar sua mente em momentos de crise</li>
+    <li>Reconstruir sua relação com o descanso, o prazer e o autocuidado</li>
+    <li>Recuperar a sensação de controle sobre sua própria vida</li>
+  </ul>
+
+  <p class="duvida-text">"Mas e se não funcionar para mim?"</p>
+
+  <p class="resposta-duvida">
+    Essa dúvida é parte do ciclo. Por isso, começamos com uma conversa inicial 
+    sem compromisso, para entender sua história e ver se faz sentido seguirmos juntas.
+  </p>
+
+  <div class="proximo-passo-cta" style="margin-top: 2.5rem;">
+    <a href="#metodologia" class="btn-pulse">Agendar Conversa Inicial</a>
+    <span class="text-small">Mococa/SP &nbsp;·&nbsp; Online</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SEÇÃO 2: METODOLOGIA
+     ═══════════════════════════════════════════ -->
+<section class="section section--alt fade-in" id="metodologia">
+  <div class="metodologia-header">
+    <span class="heading-label">Metodologia</span>
+    <h2 class="heading-serif">Um Caminho Estruturado<br>Para Sua Liberdade Emocional</h2>
+    <span class="divider divider--center"></span>
+    <p class="text-muted" style="max-width: 580px; margin: 0 auto;">
+      O Método Acalme-se não é uma solução genérica. É um processo desenhado 
+      com rigor clínico e acolhimento humano para quem busca resultados reais e duradouros.
+    </p>
+  </div>
+
+  <div class="etapas-grid">
+    <div class="etapa-card">
+      <span class="etapa-numero">01</span>
+      <h4 class="etapa-titulo">Descoberta Profunda</h4>
+      <p class="etapa-desc">
+        Identificamos os gatilhos e padrões emocionais que mantêm sua ansiedade ativa, 
+        mapeando a origem do ciclo.
+      </p>
+    </div>
+
+    <div class="etapa-card">
+      <span class="etapa-numero">02</span>
+      <h4 class="etapa-titulo">Regulação Imediata</h4>
+      <p class="etapa-desc">
+        Técnicas práticas e comprovadas para acalmar o sistema nervoso 
+        em momentos de crise, devolvendo seu senso de controle.
+      </p>
+    </div>
+
+    <div class="etapa-card">
+      <span class="etapa-numero">03</span>
+      <h4 class="etapa-titulo">Reprogramação Mental</h4>
+      <p class="etapa-desc">
+        Mudança profunda na forma como sua mente interpreta o medo 
+        e a insegurança, criando novos caminhos neurais.
+      </p>
+    </div>
+
+    <div class="etapa-card">
+      <span class="etapa-numero">04</span>
+      <h4 class="etapa-titulo">Consolidação da Paz</h4>
+      <p class="etapa-desc">
+        Ferramentas para manter le equilíbrio e a serenidade a longo prazo, 
+        garantindo que a transformação seja duradoura.
+      </p>
+    </div>
+  </div>
+
+  <div class="metodologia-cta">
+    <a href="#proximo-passo" class="btn-pulse-outline">Conhecer o Método em Detalhes</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SEÇÃO 3: DEPOIMENTOS
+     ═══════════════════════════════════════════ -->
+<section class="section fade-in" id="depoimentos">
+  <div class="depoimentos-header">
+    <span class="heading-label">Histórias Reais</span>
+    <h2 class="heading-serif">Vidas Transformadas em Mococa</h2>
+    <span class="divider divider--center"></span>
+    <p class="text-muted" style="max-width: 500px; margin: 0 auto;">
+      O que dizem as mulheres que decidiram redesenhar sua própria história.
+    </p>
+  </div>
+
+  <div class="depoimentos-grid">
+    <div class="depoimento-card">
+      <p class="depoimento-texto">
+        Eu achava que viver com medo era o meu "normal". No Método Acalme-se, 
+        entendi que a minha ansiedade era um pedido de ajuda da minha história. 
+        Hoje, as crises pararam e eu finalmente voltei a dormir tranquila.
+      </p>
+      <p class="depoimento-autor">Beatriz G.</p>
+      <p class="depoimento-local">Paciente em Mococa</p>
+    </div>
+
+    <div class="depoimento-card">
+      <p class="depoimento-texto">
+        Dr. Reginaldo não olha apenas para le sintoma, ele olha para a gente. 
+        A fase de Regulação me salvou nos dias mais difíceis. Hoje me sinto 
+        segura para sair de casa e viver sem aquele peso no peito.
+      </p>
+      <p class="depoimento-autor">Fernanda L.</p>
+      <p class="depoimento-local">Mococa / SP</p>
+    </div>
+
+    <div class="depoimento-card">
+      <p class="depoimento-texto">
+        Dr. Reginaldo é um profissional excepcional. A abordagem integrada 
+        realmente faz a diferença. Senti melhoras logo nas primeiras semanas.
+      </p>
+      <p class="depoimento-autor">Ana Oliveira</p>
+      <p class="depoimento-local">Atendimento Online</p>
+    </div>
+  </div>
+
+  <div class="depoimentos-cta">
+    <a href="#proximo-passo" class="link-sutil">Ver mais depoimentos reais</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SEÇÃO 4: PRÓXIMO PASSO
+     ═══════════════════════════════════════════ -->
+<section class="section section--narrow proximo-passo fade-in" id="proximo-passo">
+  <span class="heading-label">Seu Momento</span>
+
+  <h2 class="heading-serif">O Limite do Seu Cansaço<br>Termina Onde<br><em>Sua Decisão Começa</em></h2>
+
+  <span class="divider divider--center"></span>
+
+  <p class="text-large">
+    Não espere que a ansiedade se torne insuportável para buscar o seu resgate. 
+    O esgotamento emocional não é falta de força — é um sinal de que seu sistema 
+    está operando no limite há tempo demais.
+  </p>
+
+  <p>
+    Quanto mais tempo você sobrevive nesse ciclo de alerta, mais profundas 
+    se tornam as raízes do medo. Mas a boa notícia é que 
+    <strong>você não precisa mais sair disso sozinha.</strong>
+  </p>
+
+  <p>
+    A transformação que você busca — aquela noite de sono tranquila, 
+    o fim do aperto no peito e a volta do seu brilho — começa com 
+    um único passo hoje.
+  </p>
+
+  <p class="frase-destaque">
+    Não permita que le "depois" se torne o seu "nunca". 
+    O Método Acalme-se está pronto para ser a estrutura 
+    de segurança que você perdeu pelo caminho.
+  </p>
+
+  <div class="proximo-passo-cta">
+    <a href="#recado" class="btn-pulse btn-pulse--large">Agendar Avaliação Agora</a>
+    <a href="#metodologia" class="btn-pulse-outline" style="font-size: 0.68rem; padding: 0.9rem 2rem;">Ver Como Funciona</a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <span class="stat-numero">+500</span>
+      <span class="stat-label">Vidas Reescritas</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-numero">100%</span>
+      <span class="stat-label">Acolhimento Ético</span>
+    </div>
+  </div>
+
+  <p class="modalidade-tag">Presencial em Mococa ou Atendimento Online Especializado</p>
+
+  <p class="mensagem-final">
+    Você passou tempo demais tentando carregar le mundo nas costas enquanto 
+    sua mente gritava por socorro. Chegou a hora de parar de apenas 
+    "sobreviver" aos seus dias e começar a gerenciar suas emoções.
+  </p>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SEÇÃO 5: RECADE DO DR. REGINALDO
+     ═══════════════════════════════════════════ -->
+<section class="section section--alt recado fade-in" id="recado">
+  <div class="recado-header">
+    <span class="heading-label">Uma Palavra</span>
+    <h2 class="heading-serif">Um Recado de<br><em>Dr. Reginaldo Ventola</em></h2>
+    <span class="divider divider--center"></span>
+  </div>
+
+  <div class="recado-citacao">
+    <blockquote>
+      "Se você chegou até aqui, sua mente já compreendeu que não é mais possível 
+      sustentar esse ciclo sozinha. Como seu Agente de Transformação, eu não olho 
+      apenas para os seus sintomas — eu analiso a estrutura profunda da sua dor."
+    </blockquote>
+
+    <blockquote>
+      "O que você encontrará a seguir não é uma teoria reconfortante, mas uma 
+      prática clínica deliberada. Projetamos cada etapa para que a sua compreensão 
+      se transforme em mudança real. A estrutura para sua liberdade emocional 
+      está pronta. O próximo passo é o início do seu retorno para si mesma."
+    </blockquote>
+  </div>
+
+  <div class="recado-cta">
+    <a href="#ebook" class="btn-pulse btn-pulse--large">Sim, Quero Iniciar Minha Transformação</a>
+  </div>
+
+  <p class="rodape-legal">
+    Atendimento Ético, Sigiloso e Humanizado &nbsp;·&nbsp; Registro SPMR 0152021/SP
+  </p>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SEÇÃO 6: E-BOOK FUNNEL (CAPTURA DE LEAD)
+     ═══════════════════════════════════════════ -->
+<section class="section section--narrow ebook fade-in" id="ebook">
+  <span class="heading-label">Material Exclusivo</span>
+
+  <div class="ebook-badge">Gratuito · Download Imediato</div>
+
+  <h2 class="heading-serif">Guia: O Silêncio<br>Que Cura a Ansiedade</h2>
+
+  <span class="divider divider--center"></span>
+
+  <p class="ebook-descricao">
+    Um guia prático e acolhedor para mulheres que estão prontas para 
+    entender sua ansiedade de verdade — e dar le primeiro passo rumo à paz interior.
+  </p>
+
+  <ul class="ebook-beneficios">
+    <li>Os 4 estágios silenciosos do esgotamento emocional</li>
+    <li>Técnica de respiração para acalmar uma crise em 3 minutos</li>
+    <li>Como identificar os gatilhos ocultos da sua ansiedade</li>
+    <li>O que a neurociência revela sobre o ciclo do medo</li>
+    <li>Plano de ação de 7 dias para começar sua jornada</li>
+  </ul>
+
+  <div class="ebook-cta-area">
+    <form class="ebook-form" action="/captura-ebook" method="POST">
+      <div class="form-group">
+        <label class="form-label" for="ebook-nome">Seu Nome</label>
+        <input class="form-input" type="text" id="ebook-nome" name="nome" placeholder="Como deseja ser chamada?" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="ebook-email">Seu Melhor E-mail</label>
+        <input class="form-input" type="email" id="ebook-email" name="email" placeholder="seuemail@exemplo.com" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="ebook-whatsapp">WhatsApp <span style="font-weight: 300; text-transform: none; letter-spacing: 0;">(opcional)</span></label>
+        <input class="form-input" type="tel" id="ebook-whatsapp" name="whatsapp" placeholder="(00) 00000-0000">
+      </div>
+
+      <button type="submit" class="btn-pulse btn-pulse--large" style="width: 100%; margin-top: 0.5rem;">
+        Receber Meu Guia Gratuito
+      </button>
+
+      <p class="form-privacy">
+        Seus dados estão seguros. Respeitamos sua privacidade e 
+        você pode cancelar a qualquer momento. Leia nossa 
+        <a href="/privacidade">Política de Privacidade</a>.
+      </p>
+    </form>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SCRIPT: ANIMAÇÃO DE SCROLL (FADE-IN)
+     ═══════════════════════════════════════════ -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      observer.observe(el);
+    });
+  });
+</script>
+
+</body>
+</html>

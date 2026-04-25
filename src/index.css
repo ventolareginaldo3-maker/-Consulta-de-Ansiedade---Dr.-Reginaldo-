@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  /* MÉTODO ACALME-SE — CORES EXATAS */
+  --color-brand-paper: #F5F1ED;
+  --color-brand-ink: #3D3630;
+  --color-brand-accent: #B89890;
+  
+  /* Clinic Theme Aliases */
+  --color-clinic-bg-primary: #F5F1ED;
+  --color-clinic-bg-secondary: #EDE7E0;
+  --color-clinic-bg-tertiary: #E5DDD4;
+  --color-clinic-bg-dark: #3D3630;
+  --color-clinic-bg-white: #FFFFFF;
+  
+  --color-clinic-text-primary: #3D3630;
+  --color-clinic-text-secondary: #5C534D;
+  --color-clinic-text-muted: #8A7F75;
+  --color-clinic-text-light: #FFFFFF;
+  --color-clinic-text-rose: #B89890;
+  
+  --color-clinic-brand-primary: #B89890;
+  --color-clinic-brand-secondary: #C4A89A;
+  --color-clinic-brand-dark: #A08078;
+  
+  --color-clinic-border-subtle: #F0EBE5;
+  --color-clinic-border-medium: #E8E0D8;
+  
+  /* Generic Base Mappings */
+  --color-bg-primary: #F5F1ED;
+  --color-bg-secondary: #EDE7E0;
+  --color-text-primary: #3D3630;
+  --color-text-secondary: #5C534D;
+}
+
+.markdown-body h1 { @apply text-3xl font-serif mb-6 mt-8 text-clinic-text-primary; }
+.markdown-body h2 { @apply text-2xl font-serif mb-4 mt-6 text-clinic-text-primary; }
+.markdown-body h3 { @apply text-xl font-serif mb-3 mt-5 text-clinic-text-primary; }
+.markdown-body p { @apply mb-4 leading-relaxed font-light text-clinic-text-secondary; }
+.markdown-body ul { @apply list-disc pl-6 mb-6 space-y-2; }
+.markdown-body li { @apply text-clinic-text-secondary; }
+.markdown-body strong { @apply font-bold text-clinic-brand-primary; }
+.markdown-body blockquote { @apply border-l-4 border-clinic-brand-primary pl-4 italic my-6 text-clinic-text-muted; }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-clinic-bg-primary text-clinic-text-primary font-sans antialiased relative overflow-x-hidden;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight text-clinic-text-primary;
+    font-weight: 400;
+  }
+
+  p {
+    @apply font-sans;
+  }
+}
+
+/* Performance optimization for off-screen content */
+.section-optimize {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+}
+
+.magnetic-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(184, 152, 144, 0.05) 0%, transparent 70%);
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+@keyframes cta-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(184, 152, 144, 0.3), 0 4px 16px rgba(184, 152, 144, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(184, 152, 144, 0), 0 6px 24px rgba(184, 152, 144, 0.3);
+  }
+}
+
+.animate-cta-pulse {
+  animation: cta-pulse 3s infinite ease-in-out;
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { left: -100%; }
+  50% { left: 120%; }
+}
+
+.heading-label {
+  @apply text-[10px] uppercase tracking-[0.4em] text-clinic-brand-primary font-black mb-4 block;
+}
+
+.divider {
+  @apply w-[50px] h-px bg-clinic-brand-primary my-10 block;
+}
+
+/* === CORREÇÃO DE CONTRASTE - FUNDO MARROM ESCURO (#4A3F3F) === */
+.section--dark,
+.recado,
+section[style*="#4A3F3F"] {
+  background-color: #4A3F3F !important;
+  color: #F5F0EB !important;
+  padding: 5rem 2rem;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Força TODO texto interno a ficar claro e legível */
+.section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4,
+.section--dark p, .section--dark span, .section--dark blockquote,
+.section--dark .heading-label, .section--dark .text-muted, .section--dark .text-small,
+.recado h1, .recado h2, .recado h3, .recado p, .recado blockquote,
+.recado .heading-label, .recado .text-muted, .recado .text-small {
+  color: #F5F0EB !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  background: none !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Garante visibilidade das etapas em fundos escuros */
+.section--dark .journey-step-inactive {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(245, 241, 237, 0.5) !important;
+  border: 1px solid rgba(245, 241, 237, 0.2) !important;
+}
+
+.section--dark .journey-label-active {
+  color: #F5F0EB !important;
+}
+
+.section--dark .journey-label-inactive {
+  color: rgba(245, 241, 237, 0.4) !important;
+}
+
+/* Destaques rosa dentro do escuro */
+.section--dark .text-rose,
+.recado .text-rose,
+.recado blockquote:first-of-type {
+  color: #E6BCB1 !important; /* Rose levemente mais claro para contraste no escuro */
+}
+
+/* Garante que nenhum elemento fique por trás ou seja clipado */
+.section--dark > *,
+.recado > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Espaçamento interno seguro para o texto não encostar nas bordas */
+.recado-citacao {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Remove qualquer pseudo-elemento que possa estar cobrindo o texto */
+.section--dark::before, .section--dark::after,
+.recado::before, .recado::after {
+  display: none !important;
+}
