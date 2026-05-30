@@ -1,8 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import SEO from '../../components/SEO';
 import { Hero } from '../../components/home/Hero';
-import { IntroVideoSection } from '../../components/home/IntroVideoSection';
-import { ClinicalContextSection } from '../../components/home/ClinicalContextSection';
+
+const IntroVideoSection = lazy(() => import('../../components/home/IntroVideoSection').then(m => ({ default: m.IntroVideoSection })));
+const ClinicalContextSection = lazy(() => import('../../components/home/ClinicalContextSection').then(m => ({ default: m.ClinicalContextSection })));
 
 // Lazy-load below-the-fold sections for massive initial paint optimization
 const AdoecimentoSilencioso = lazy(() => import('../../components/metodo/AdoecimentoSilencioso').then(m => ({ default: m.AdoecimentoSilencioso })));
@@ -50,8 +51,12 @@ const Home = () => {
       />
 
       <Hero />
-      <IntroVideoSection />
-      <ClinicalContextSection />
+      <Suspense fallback={<LoadingSection />}>
+        <IntroVideoSection />
+      </Suspense>
+      <Suspense fallback={<LoadingSection />}>
+        <ClinicalContextSection />
+      </Suspense>
       
       <Suspense fallback={<LoadingSection />}>
         <AdoecimentoSilencioso />

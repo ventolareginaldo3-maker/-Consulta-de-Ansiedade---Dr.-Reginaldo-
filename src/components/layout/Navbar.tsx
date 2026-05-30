@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../hooks/useAuth';
 
 export const Navbar = () => {
@@ -64,13 +63,9 @@ export const Navbar = () => {
       </div>
 
         {/* Mobile Menu */}
-      <AnimatePresence>
         {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden absolute top-20 left-0 w-full bg-clinic-bg-primary border-b border-clinic-border-subtle p-8 flex flex-col gap-6 text-center uppercase tracking-widest text-[10px] z-40 shadow-2xl"
+          <div 
+            className="lg:hidden absolute top-20 left-0 w-full bg-clinic-bg-primary border-b border-clinic-border-subtle p-8 flex flex-col gap-6 text-center uppercase tracking-widest text-[10px] z-40 shadow-2xl mobile-menu-enter"
           >
             <Link to="/" onClick={() => setIsOpen(false)} className="py-2 border-b border-clinic-border-subtle font-bold text-clinic-text-primary">Início</Link>
             <Link to="/metodo-e-tratamento" onClick={() => setIsOpen(false)} className="py-2 border-b border-clinic-border-subtle font-bold text-clinic-text-primary">Método</Link>
@@ -83,9 +78,8 @@ export const Navbar = () => {
             <Link to="/agendar" onClick={() => setIsOpen(false)} className="py-4 bg-clinic-brand-primary text-white rounded-full font-black shadow-xl shadow-clinic-brand-primary/30 text-xs animate-cta-pulse">
               Agendar Atendimento
             </Link>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </nav>
   );
 };

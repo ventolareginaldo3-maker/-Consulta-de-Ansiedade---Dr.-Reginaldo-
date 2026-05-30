@@ -29,7 +29,7 @@ export default defineConfig(({mode}) => {
         output: {
           manualChunks: {
             'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-            'vendor-ui': ['lucide-react', 'framer-motion'],
+            'vendor-ui': ['lucide-react'],
             'vendor-utils': ['react-helmet-async', 'clsx', 'tailwind-merge'],
           },
         },
@@ -42,6 +42,9 @@ export default defineConfig(({mode}) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
+        'framer-motion': path.resolve(__dirname, 'src/motion-shim.tsx'),
+        'motion/react': path.resolve(__dirname, 'src/motion-shim.tsx'),
+        'motion': path.resolve(__dirname, 'src/motion-shim.tsx'),
       },
     },
     server: {
