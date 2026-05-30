@@ -1,4 +1,10 @@
-const AdmZip = require('adm-zip');
+let AdmZip;
+try {
+  AdmZip = require('adm-zip');
+} catch (e) {
+  console.log('Aviso: adm-zip não está instalado. Pulando geração do ZIP do dist (comum em ambientes de CI/Cloudflare Pages).');
+  process.exit(0);
+}
 const fs = require('fs');
 const path = require('path');
 

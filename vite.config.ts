@@ -41,10 +41,10 @@ export default defineConfig(({mode}) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
-        'framer-motion': path.resolve(__dirname, 'src/motion-shim.tsx'),
-        'motion/react': path.resolve(__dirname, 'src/motion-shim.tsx'),
-        'motion': path.resolve(__dirname, 'src/motion-shim.tsx'),
+        '@': path.resolve('.'),
+        'framer-motion': path.resolve('src/motion-shim.tsx'),
+        'motion/react': path.resolve('src/motion-shim.tsx'),
+        'motion': path.resolve('src/motion-shim.tsx'),
       },
     },
     server: {
