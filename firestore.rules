@@ -11,6 +11,10 @@ service cloud.firestore {
         (request.auth.token.email == "terapvent46@gmail.com" && request.auth.token.email_verified == true);
     }
 
+    match /config/{documentId} {
+      allow read, write: if true; // Only for health checks, server always has bypass but rules might still be checked if using SDK
+    }
+
     match /leads/{leadId} {
       allow create: if request.resource.data.name is string && request.resource.data.phone is string;
       allow read, write: if isAdmin();

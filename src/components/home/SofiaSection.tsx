@@ -5,11 +5,6 @@ export const SofiaSection = () => {
   return (
     <section style={{ backgroundColor: '#F5F1ED', padding: '6rem 2rem', fontFamily: "'Inter', -apple-system, sans-serif" }} id="viver-com-ansiedade">
       
-      {/* Fontes */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-      
       <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '5rem', alignItems: 'center' }}>
         
         {/* COLUNA DE TEXTO */}
@@ -58,7 +53,7 @@ export const SofiaSection = () => {
 
         {/* COLUNA DE IMAGEM */}
         <div style={{ position:'relative', height:'100%', minHeight:'620px', display:'flex', alignItems:'center' }}>
-          <img src='https://res.cloudinary.com/dx77zgslr/image/upload/v1776955133/Depress%C3%A3o-Ansiedade_MococaSP_gqfsoa.png' alt='A Realidade da Ansiedade' style={{ width:'100%', height:'100%', objectFit:'cover', borderRadius:'2rem', boxShadow:'0 20px 60px rgba(74,63,63,0.15)' }} referrerPolicy="no-referrer" />
+          <img src='https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776955133/Depress%C3%A3o-Ansiedade_MococaSP_gqfsoa.png' alt='A Realidade da Ansiedade' style={{ width:'100%', height:'100%', objectFit:'cover', borderRadius:'2rem', boxShadow:'0 20px 60px rgba(74,63,63,0.15)' }} referrerPolicy="no-referrer" loading="lazy" />
         </div>
 
       </div>

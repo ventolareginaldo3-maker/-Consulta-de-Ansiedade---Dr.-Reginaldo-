@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como funciona a mente ansiosa | Psicanalista em Mococa - Dr. Reginaldo Ventola</title>
+    <meta name="description" content="Entenda o ciclo da mente ansiosa e como o Método Acalme-se ajuda mulheres em Mococa a recuperarem a paz interior. Atendimento clínico especializado.">
+    
+    <!-- FAVICON -->
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <!-- CSS MINIMAL INLINE -->
+    <style>
+        :root {
+            --bg: #fdfcfb;
+            --ink: #1a1a1a;
+            --accent: #4a90e2;
+            --secondary: #6c757d;
+            --peace: #2ecc71;
+            --warning: #f1c40f;
+            --danger: #e74c3c;
+            --f-serif: 'Playfair Display', serif;
+            --f-sans: 'Inter', sans-serif;
+            --shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: var(--f-sans); 
+            line-height: 1.6; 
+            color: var(--ink); 
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: 4rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        
+        h1, h2, h3 { font-family: var(--f-serif); line-height: 1.2; margin-bottom: 1.5rem; }
+        h1 { font-size: 2.5rem; color: var(--ink); text-align: center; }
+        h2 { font-size: 2rem; color: var(--ink); }
+        h3 { font-size: 1.5rem; color: var(--secondary); }
+        
+        p { margin-bottom: 1.2rem; font-size: 1.1rem; color: #444; }
+        
+        .bridge { 
+            font-style: italic; 
+            color: var(--accent); 
+            padding: 1.5rem; 
+            border-left: 4px solid var(--accent); 
+            background: #f0f7ff; 
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .btn-whatsapp { background: var(--peace); color: #fff; width: 100%; max-width: 400px; margin: 1rem auto; display: block; font-size: 1.1rem; }
+        .btn-secondary { background: var(--accent); color: #fff; margin: 0.5rem; }
+        .btn-outline { border: 2px solid var(--accent); color: var(--accent); background: transparent; }
+
+        .grid-mechanism { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .card-mech { background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); border-top: 4px solid var(--accent); }
+        .card-mech strong { display: block; margin-bottom: 0.5rem; color: var(--ink); }
+        .card-mech p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+        .symptoms { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+        .symptom-tag { background: #fff; border: 1px solid #ddd; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.9rem; }
+
+        .alert-box { background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center; font-weight: 600; }
+
+        .cycle-list { counter-reset: cycle; list-style: none; padding: 0; }
+        .cycle-list li { margin-bottom: 1rem; padding-left: 3rem; position: relative; font-weight: 500; font-size: 1.1rem; }
+        .cycle-list li::before { 
+            counter-increment: cycle; 
+            content: counter(cycle); 
+            position: absolute; 
+            left: 0; top: 0; 
+            background: var(--accent); 
+            color: #fff; 
+            width: 32px; height: 32px; 
+            border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+        }
+
+        .stages { display: grid; gap: 1.5rem; margin: 2rem 0; }
+        .stage-item { display: flex; gap: 1.5rem; align-items: flex-start; background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); }
+        .stage-num { font-size: 2rem; font-family: var(--f-serif); color: var(--accent); opacity: 0.5; font-weight: 700; }
+
+        blockquote { padding: 2rem; font-style: italic; color: var(--secondary); border-left: 4px solid #ddd; margin: 2rem 0; background: #fafafa; font-size: 1.2rem; }
+
+        figure { margin: 2rem 0; text-align: center; }
+        figure img { width: 100%; border-radius: 12px; box-shadow: var(--shadow); height: auto; }
+        figcaption { margin-top: 0.8rem; font-size: 0.9rem; color: var(--secondary); font-style: italic; }
+
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: var(--shadow); margin: 2rem 0; background: #000; }
+        .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        .details-faq { margin: 1rem 0; }
+        details { background: #fff; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #eee; overflow: hidden; }
+        summary { padding: 1rem 1.5rem; cursor: pointer; font-weight: 600; outline: none; }
+        summary:hover { background: #f9f9f9; }
+        details[open] summary { border-bottom: 1px solid #eee; background: #f9f9f9; }
+        .faq-content { padding: 1.5rem; color: #555; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
+        .map-wrapper { border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); height: 300px; }
+
+        form { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow); }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; }
+        input, textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem; }
+        textarea { height: 120px; resize: vertical; }
+
+        .disclaimer { font-size: 0.85rem; color: #888; margin-top: 2rem; line-height: 1.4; border-top: 1px solid #eee; padding-top: 1rem; }
+
+        footer { text-align: center; padding: 4rem 0; background: #1a1a1a; color: #fff; }
+        footer p { color: #aaa; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .grid-mechanism { grid-template-columns: 1fr; }
+            .stage-item { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section id="mecanismo">
+            <h1>Como funciona a mente ansiosa</h1>
+            <p>A ansiedade não define quem você é. Ela mostra que sua mente está presa em um padrão que pode ser mudado.</p>
+            <div class="grid-mechanism">
+                <article class="card-mech"><strong>Antecipação</strong><p>Prever problemas antes que eles aconteçam</p></article>
+                <article class="card-mech"><strong>Cenários</strong><p>Imaginar cenários negativos repetidamente</p></article>
+                <article class="card-mech"><strong>Interpretação</strong><p>Ver situações neutras como ameaça</p></article>
+                <article class="card-mech"><strong>Hipervigilância</strong><p>Sentir que precisa estar sempre alerta</p></article>
+                <article class="card-mech"><strong>Esgotamento</strong><p>Cansaço profundo que não passa com o sono</p></article>
+                <article class="card-mech"><strong>Ameaça</strong><p>Vive o tempo todo sobre ameaça</p></article>
+            </div>
+        </section>
+        <div class="alert-box">Você sabia que a Ansiedade não tratada pode evoluir para a depressão?</div>
+        <section id="ciclo">
+            <h2>Ciclo silencioso da ansiedade</h2>
+            <ol class="cycle-list">
+                <li>antecipam problemas</li>
+                <li>imaginam o pior cenário</li>
+                <li>sentem medo ou tensão</li>
+                <li>evitam algumas situações</li>
+                <li>a mente interpreta isso como confirmação de perigo</li>
+            </ol>
+        </section>
+        <section id="cta">
+            <a href="https://wa.me/5519992416095" class="btn btn-whatsapp">QUERO RECUPERAR MINHA VIDA</a>
+        </section>
+    </main>
+    <footer><p>&copy; 2026 Dr. Reginaldo Ventola</p></footer>
+</body>
+</html>

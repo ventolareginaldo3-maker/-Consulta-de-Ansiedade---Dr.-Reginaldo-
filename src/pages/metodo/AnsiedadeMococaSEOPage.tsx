@@ -212,7 +212,7 @@ const AnsiedadeMococaSEOPage = () => {
               
               <div className="relative aspect-video bg-brand-ink rounded-[2rem] lg:rounded-[4rem] overflow-hidden shadow-2xl border border-brand-ink/5">
                 <YouTubeEmbed 
-                  videoId="R7Dk-i7vJYo" 
+                  videoId="MWNWB8HT3fY" 
                   title="Apresentação Dr. Reginaldo Ventola - Método Acalme-se" 
                 />
               </div>

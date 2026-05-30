@@ -1,69 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.metodoacalmese.com.br/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>O Ciclo Silencioso da Ansiedade - Método Acalme-se</video:title>
+      <video:description>Entenda como o ciclo silencioso da ansiedade afeta sua vida e como o Método Acalme-se pode ajudar você a retomar o controle.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
+    </video:video>
   </url>
   <url>
     <loc>https://www.metodoacalmese.com.br/metodo-e-tratamento</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/3zHS8wm95sE/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Método Acalme-se: O Caminho para a Liberdade</video:title>
+      <video:description>Conheça detalhadamente como o Método Acalme-se ajuda mulheres a superarem a ansiedade de forma natural e profunda.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/3zHS8wm95sE</video:player_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/psiquiatra-ou-psicanalista</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Psiquiatra ou Psicanalista? Entenda as Diferenças</video:title>
+      <video:description>Dr. Reginaldo Ventola explica as abordagens de psiquiatria e psicanálise e como o Método Acalme-se une o melhor de cada uma.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/ansiedade-e-depressao</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Entenda a Ansiedade e Depressão - Dr. Reginaldo Ventola</video:title>
+      <video:description>Esclarecimentos sobre a relação entre ansiedade e depressão e como o tratamento adequado pode transformar sua vida.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/ansiedade-sob-controle</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Ansiedade Sob Controle - Dra. Reginaldo Ventola</video:title>
+      <video:description>Estratégias práticas e embasamento clínico para manter a ansiedade sob controle no dia a dia.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/agendar</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.metodoacalmese.com.br/triagem</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.metodoacalmese.com.br/ansiedade-em-mococa</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Tratamento de Ansiedade em Mococa - Dr. Reginaldo Ventola</video:title>
+      <video:description>Assista ao vídeo explicativo sobre o tratamento de ansiedade disponível em Mococa com o Método Acalme-se.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
+    </video:video>
   </url>
   <url>
-    <loc>https://www.metodoacalmese.com.br/blog</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://www.metodoacalmese.com.br/especialista-ansiedade-mococa</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Especialista em Ansiedade em Mococa</video:title>
+      <video:description>Conheça a abordagem do Dr. Reginaldo Ventola, especialista em ansiedade em Mococa, e como o método funciona.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
+    </video:video>
   </url>
   <url>
     <loc>https://www.metodoacalmese.com.br/sobre</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/blog</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/sintomas-de-ansiedade</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.metodoacalmese.com.br/agendar</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.metodoacalmese.com.br/adoecimento-silencioso</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.metodoacalmese.com.br/depoimentos</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.metodoacalmese.com.br/iridologia-e-naturopatia</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.metodoacalmese.com.br/mente-ansiosa</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.metodoacalmese.com.br/ansiedade-e-depressao</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.metodoacalmese.com.br/guia-de-resgate</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.metodoacalmese.com.br/especialista-ansiedade-mococa</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.metodoacalmese.com.br/depoimentos</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/UXkFKjabHPk/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Depoimento da Bianca - Método Acalme-se</video:title>
+      <video:description>Veja o depoimento real da Bianca sobre sua jornada de transformação e superação da ansiedade com o Método Acalme-se.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/UXkFKjabHPk</video:player_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/triagem</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/ebooks</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/politica-de-privacidade</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/termos-de-uso</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

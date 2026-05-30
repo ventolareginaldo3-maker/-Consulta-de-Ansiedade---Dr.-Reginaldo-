@@ -27,7 +27,7 @@ export const EbookSection = () => {
           >
             <div className="relative aspect-[3/4] max-w-md mx-auto rounded-[3rem] overflow-hidden shadow-2xl border border-brand-ink/10 group">
               <img 
-                src="https://res.cloudinary.com/djl7c37my/image/upload/v1777042283/Guia_De_Resgate-Psiquiatra_Mococa_hhkd54.png" 
+                src="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777042283/Guia_De_Resgate-Psiquiatra_Mococa_hhkd54.png" 
                 alt="E-book Guia de Resgate" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"

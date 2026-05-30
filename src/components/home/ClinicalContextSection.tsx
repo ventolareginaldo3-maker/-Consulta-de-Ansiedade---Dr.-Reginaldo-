@@ -113,7 +113,7 @@ export const ClinicalContextSection = () => {
             viewport={{ once: true }}
           >
             <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#B89890] mb-6">
-              Buscando Psiquiatra em Mococa? Comece pela Triagem Clínica Gratuita.
+              Buscando Tratamento para Ansiedade? Comece pela Triagem Clínica Gratuita.
             </p>
             <Link 
               to="/triagem"

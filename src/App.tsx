@@ -5,7 +5,6 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { WhatsAppButton } from './components/ui/WhatsAppButton';
-import { AIAssistant } from './components/ui/AIAssistant';
 import { BackButton } from './components/ui/BackButton';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -14,7 +13,8 @@ import { analytics } from './services/analytics';
 // Main pages - loaded immediately for speed on initial entry
 import Home from './pages/home/Home';
 
-// Lazy load non-critical pages
+// Lazy load non-critical pages and widgets
+const AIAssistant = lazy(() => import('./components/ui/AIAssistant').then(m => ({ default: m.AIAssistant })));
 const QuizPage = lazy(() => import('./pages/quiz/QuizPage'));
 const BookingPage = lazy(() => import('./pages/booking/BookingPage'));
 const AdminPage = lazy(() => import('./pages/admin/AdminPage'));
@@ -93,7 +93,9 @@ function App() {
             </Suspense>
             <Footer />
             <WhatsAppButton />
-            <AIAssistant />
+            <Suspense fallback={null}>
+              <AIAssistant />
+            </Suspense>
             <BackButton />
           </div>
         </Router>

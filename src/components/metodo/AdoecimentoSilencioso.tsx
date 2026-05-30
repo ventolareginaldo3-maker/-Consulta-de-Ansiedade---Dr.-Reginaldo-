@@ -83,7 +83,7 @@ export const AdoecimentoSilencioso = () => {
             className="relative"
           >
             <img 
-              src="https://res.cloudinary.com/dx77zgslr/image/upload/v1776954021/criativo-acalme-se-aspiration-feed_17_pxavwq.png" 
+              src="https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776954021/criativo-acalme-se-aspiration-feed_17_pxavwq.png" 
               alt="Método Acalme-se - Compreensão" 
               className="w-full rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.1)]"
               referrerPolicy="no-referrer"
@@ -198,7 +198,7 @@ export const AdoecimentoSilencioso = () => {
           <div className="relative h-full min-h-[400px] lg:min-h-0">
             <div className="h-full rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden shadow-2xl">
               <img 
-                src="https://res.cloudinary.com/dx77zgslr/image/upload/v1776954748/Esgotamento-_burnout-Ansiedade-Mococa-Psiquiatra_qbq7f6.png" 
+                src="https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776954748/Esgotamento-_burnout-Ansiedade-Mococa-Psiquiatra_qbq7f6.png" 
                 alt="O Ciclo Silencioso do Medo" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[2000ms]"
                 referrerPolicy="no-referrer"

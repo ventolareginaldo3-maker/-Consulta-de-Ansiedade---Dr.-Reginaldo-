@@ -156,7 +156,7 @@ export const ContactSection = () => {
         </motion.div>
         <div className="mt-16 text-center">
           <p className="text-sm text-brand-ink/40 uppercase tracking-widest font-bold">
-            Especialista em Ansiedade e Psiquiatra em Mococa - Dr. Reginaldo Ventola
+            Especialista em Ansiedade e Psicanalista em Mococa - Dr. Reginaldo Ventola
           </p>
         </div>
       </div>

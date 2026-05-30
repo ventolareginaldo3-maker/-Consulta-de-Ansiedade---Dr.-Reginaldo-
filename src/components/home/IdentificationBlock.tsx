@@ -102,7 +102,7 @@ export const IdentificationBlock = () => {
             
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl mb-12">
                <YouTubeEmbed 
-                videoId="R7Dk-i7vJYo" 
+                videoId="MWNWB8HT3fY" 
                 title="Sintomas de Ansiedade - Dr. Reginaldo Ventola" 
               />
             </div>

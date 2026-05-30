@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método Acalme-se | Psicanalista em Mococa</title>
+
+<!-- Fontes Premium -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* RESET & VARIÁVEIS GLOBAIS */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg-primary: #F5F1ED;
+    --bg-secondary: #EDE7E0;
+    --bg-card: #FFFFFF;
+    --text-primary: #3D3630;
+    --text-secondary: #5C534D;
+    --text-muted: #8A7F75;
+    --text-light: #A89F97;
+    --brand: #9A8B7D;
+    --brand-light: #B09F8F;
+    --brand-accent: #C4A89A;
+    --border: #DDD5CC;
+    --border-subtle: #E8E0D8;
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; color: var(--text-primary); background-color: var(--bg-primary); line-height: 1.9; letter-spacing: 0.01em; -webkit-font-smoothing: antialiased; }
+  .heading-serif { font-family: 'Cormorant Garamond', 'Georgia', serif; font-weight: 400; letter-spacing: -0.02em; color: var(--text-primary); }
+  .heading-label { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--brand); margin-bottom: 1rem; display: block; }
+  h1.heading-serif { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.15; font-weight: 300; }
+  h2.heading-serif { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; font-weight: 300; }
+  h3.heading-serif { font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.3; font-weight: 400; }
+  p { font-size: 0.95rem; line-height: 2; color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 620px; }
+  .text-large { font-size: 1.1rem; line-height: 2.1; font-weight: 300; }
+  .text-muted { color: var(--text-muted); font-size: 0.88rem; line-height: 1.9; }
+  .section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section--narrow { max-width: 720px; }
+  .section--alt { background-color: var(--bg-secondary); }
+  .divider { width: 50px; height: 1px; background-color: var(--brand-light); margin: 2.5rem 0; display: block; }
+  .divider--center { margin-left: auto; margin-right: auto; }
+
+  /* BOTOES */
+  .btn-pulse { display: inline-block; padding: 1.1rem 2.8rem; background-color: var(--brand); color: #FFFFFF; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; position: relative; overflow: hidden; transition: background-color 0.4s ease, transform 0.2s ease; animation: pulse-glow 3s ease-in-out infinite; }
+  @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(154, 139, 125, 0.3), 0 4px 16px rgba(154, 139, 125, 0.15); } 50% { box-shadow: 0 0 0 12px rgba(154, 139, 125, 0), 0 6px 24px rgba(154, 139, 125, 0.25); } }
+  
+  .etapas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; max-width: 960px; margin: 0 auto; }
+  .etapa-card { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 2.2rem 1.8rem; text-align: left; position: relative; transition: border-color 0.3s ease; }
+  .etapa-numero { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--brand-accent); line-height: 1; margin-bottom: 1rem; display: block; }
+  
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    .section { padding: 3.5rem 1.5rem; }
+    .etapas-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="section section--narrow sair-do-ciclo fade-in" id="sair-do-ciclo">
+  <span class="heading-label">Um Novo Olhar</span>
+  <h2 class="heading-serif">Viver com Ansiedade<br>Não é o Seu Normal.<br><em>É o Seu Sinal.</em></h2>
+  <span class="divider divider--center"></span>
+  <p class="text-large">Reconhecer que algo precisa mudar é le primeiro passo.</p>
+  <ul style="list-style: none; padding: 0;">
+    <li>Compreender as raízes emocionais da sua ansiedade</li>
+    <li>Técnicas práticas para acalmar sua mente</li>
+    <li>Recuperar le controle sobre sua própria vida</li>
+  </ul>
+  <div style="margin-top: 2.5rem; text-align: center;">
+    <a href="https://wa.me/5519992416095" class="btn-pulse">Agendar Conversa Inicial</a>
+  </div>
+</section>
+
+<section class="section section--alt fade-in" id="metodologia">
+  <div style="text-align: center; margin-bottom: 3.5rem;">
+    <span class="heading-label">Metodologia</span>
+    <h2 class="heading-serif">Método Acalme-se</h2>
+  </div>
+  <div class="etapas-grid">
+    <div class="etapa-card">
+      <span class="etapa-numero">01</span>
+      <h4 style="font-weight: 500; margin-bottom: 0.5rem;">Descoberta</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Mapeamos a origem do ciclo ansioso.</p>
+    </div>
+    <div class="etapa-card">
+      <span class="etapa-numero">02</span>
+      <h4 style="font-weight: 500; margin-bottom: 0.5rem;">Regulação</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Técnicas para acalmar le sistema nervoso.</p>
+    </div>
+    <div class="etapa-card">
+      <span class="etapa-numero">03</span>
+      <h4 style="font-weight: 500; margin-bottom: 0.5rem;">Reprogramação</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Novos caminhos neurais e interpretações.</p>
+    </div>
+    <div class="etapa-card">
+      <span class="etapa-numero">04</span>
+      <h4 style="font-weight: 500; margin-bottom: 0.5rem;">Consolidação</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Manutenção da serenidade a longo prazo.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+  });
+</script>
+
+</body>
+</html>

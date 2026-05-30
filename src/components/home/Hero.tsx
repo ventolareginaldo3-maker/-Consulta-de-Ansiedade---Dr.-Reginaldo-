@@ -24,7 +24,7 @@ export const Hero = () => {
           
           <div className="max-w-xl mx-auto lg:mx-0">
             <p className="text-xl md:text-2xl font-serif italic text-clinic-text-secondary mb-8 lg:mb-10 leading-relaxed font-light">
-              Se você busca por um <strong className="text-clinic-text-rose font-medium">psicanalista em Mococa</strong> ou acompanhamento especializado para ansiedade, entenda: existe um motivo real por trás do que você sente, e não é falta de controle.
+              Se você busca por um <strong className="text-clinic-text-rose font-medium">psicanalista em Mococa</strong> ou tratamento para ansiedade, entenda: existe um motivo real por trás do que você sente, e não é falta de controle.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 mb-10 lg:mb-12">
@@ -66,11 +66,14 @@ export const Hero = () => {
         >
           <div className="relative aspect-[4/5] rounded-[3rem] lg:rounded-[5rem] overflow-hidden shadow-2xl border-8 border-white">
             <img 
-              src="https://res.cloudinary.com/djl7c37my/image/upload/v1777041959/Psiquiatra_Mococa_j0pzl6.png" 
+              src="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777041959/Psiquiatra_Mococa_j0pzl6.png" 
               alt="Dr. Reginaldo Ventola - Psicanalista em Mococa" 
               className="w-full h-full object-cover object-[center_top] hover:scale-105 transition-transform duration-[2000ms] ease-out"
               referrerPolicy="no-referrer"
               loading="eager"
+              width="480"
+              height="600"
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-clinic-bg-dark/10 via-transparent to-transparent" />
           </div>

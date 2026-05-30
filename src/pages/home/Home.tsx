@@ -1,41 +1,42 @@
-import React, { useState } from 'react';
+import React, { Suspense, lazy } from 'react';
 import SEO from '../../components/SEO';
 import { Hero } from '../../components/home/Hero';
 import { IntroVideoSection } from '../../components/home/IntroVideoSection';
-import { ConvictionTransition } from '../../components/home/ConvictionTransition';
-import { IdentificationBlock } from '../../components/home/IdentificationBlock';
-import { AnxietyExplanation } from '../../components/home/AnxietyExplanation';
-import { DeepPsychologicalBlock } from '../../components/home/DeepPsychologicalBlock';
 import { ClinicalContextSection } from '../../components/home/ClinicalContextSection';
-import { SofiaSection } from '../../components/home/SofiaSection';
-import { MethodologySection } from '../../components/home/MethodologySection';
-import { TestimonialsSection } from '../../components/home/TestimonialsSection';
-import { MainCTASection } from '../../components/home/MainCTASection';
-import { MapSection } from '../../components/home/MapSection';
-import { EbookSection } from '../../components/home/EbookSection';
-import { BlogSection } from '../../components/home/BlogSection';
-import { FAQSection } from '../../components/home/FAQSection';
-import { ContactSection } from '../../components/home/ContactSection';
-import AboutProfessional from '../../components/home/AboutProfessional';
-import { AdoecimentoSilencioso } from '../../components/metodo/AdoecimentoSilencioso';
-import { CONTACT_INFO } from '../../constants';
-import { SPECIALTIES } from '../../specialtiesData';
+
+// Lazy-load below-the-fold sections for massive initial paint optimization
+const AdoecimentoSilencioso = lazy(() => import('../../components/metodo/AdoecimentoSilencioso').then(m => ({ default: m.AdoecimentoSilencioso })));
+const SofiaSection = lazy(() => import('../../components/home/SofiaSection').then(m => ({ default: m.SofiaSection })));
+const MethodologySection = lazy(() => import('../../components/home/MethodologySection').then(m => ({ default: m.MethodologySection })));
+const TestimonialsSection = lazy(() => import('../../components/home/TestimonialsSection').then(m => ({ default: m.TestimonialsSection })));
+const MainCTASection = lazy(() => import('../../components/home/MainCTASection').then(m => ({ default: m.MainCTASection })));
+const EbookSection = lazy(() => import('../../components/home/EbookSection').then(m => ({ default: m.EbookSection })));
+const BlogSection = lazy(() => import('../../components/home/BlogSection').then(m => ({ default: m.BlogSection })));
+const FAQSection = lazy(() => import('../../components/home/FAQSection').then(m => ({ default: m.FAQSection })));
+const MapSection = lazy(() => import('../../components/home/MapSection').then(m => ({ default: m.MapSection })));
+const ContactSection = lazy(() => import('../../components/home/ContactSection').then(m => ({ default: m.ContactSection })));
+
+const LoadingSection = () => (
+  <div className="w-full py-12 flex items-center justify-center min-h-[150px] bg-clinic-bg-primary/50">
+    <div className="w-6 h-6 border-2 border-clinic-brand-primary border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 const Home = () => {
   return (
     <main>
       <SEO 
-        title="Ansiedade Mococa | Dr. Reginaldo Ventola: Método Acalme-se"
-        description="Especialista em ansiedade em Mococa/SP. Tratamento especializado para ansiedade, pânico e depressão através da Psicanálise e Hipnoterapia. Se você busca por um psicanalista em Mococa, conheça o Método Acalme-se."
-        keywords="ansiedade mococa, psicanalista mococa, psicanálise mococa, psiquiatra mococa, hipnoterapia mococa, tratamento ansiedade mococa, psicologo mococa, saude mental mococa, crise de panico mococa, depressao mococa, metodo acalme-se"
+        title="Tratamento de Ansiedade em Mococa | Dr. Reginaldo Ventola | Psicanalista"
+        description="Dr. Reginaldo Ventola é Psicanalista em Mococa/SP e criador do Método Acalme-se. Especialista no tratamento profundo e integrativo da ansiedade e esgotamento."
+        keywords="psicanalista mococa, psicanalista em mococa, ansiedade mococa, psicanálise mococa, tratamento ansiedade mococa, saude mental mococa, método acalme-se, psiquiatra ou psicanalista"
         canonical={window.location.origin}
-        ogImage="https://res.cloudinary.com/djl7c37my/image/upload/v1777041959/Psiquiatra_Mococa_j0pzl6.png"
+        ogImage="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777041959/Psiquiatra_Mococa_j0pzl6.png"
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "Physician",
-          "name": "Dr. Reginaldo Ventola",
-          "image": "https://res.cloudinary.com/djl7c37my/image/upload/v1777041959/Psiquiatra_Mococa_j0pzl6.png",
-          "description": "Especialista em tratamento de ansiedade em Mococa/SP através do Método Acalme-se.",
+          "@type": "ProfessionalService",
+          "name": "Dr. Reginaldo Ventola - Psicanálise e Método Acalme-se",
+          "image": "https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777041959/Psiquiatra_Mococa_j0pzl6.png",
+          "description": "Psicanálise e tratamento integrativo de ansiedade em Mococa/SP através do Método Acalme-se.",
           "telephone": "+5519992416095",
           "address": {
             "@type": "PostalAddress",
@@ -51,16 +52,46 @@ const Home = () => {
       <Hero />
       <IntroVideoSection />
       <ClinicalContextSection />
-      <AdoecimentoSilencioso />
-      <SofiaSection />
-      <MethodologySection />
-      <TestimonialsSection />
-      <MainCTASection />
-      <EbookSection />
-      <BlogSection />
-      <FAQSection />
-      <MapSection />
-      <ContactSection />
+      
+      <Suspense fallback={<LoadingSection />}>
+        <AdoecimentoSilencioso />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSection />}>
+        <SofiaSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSection />}>
+        <MethodologySection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSection />}>
+        <TestimonialsSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSection />}>
+        <MainCTASection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSection />}>
+        <EbookSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSection />}>
+        <BlogSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSection />}>
+        <FAQSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSection />}>
+        <MapSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSection />}>
+        <ContactSection />
+      </Suspense>
     </main>
   );
 };

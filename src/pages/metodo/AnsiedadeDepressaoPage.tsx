@@ -116,7 +116,7 @@ const AnsiedadeDepressaoPage = () => {
           </div>
           <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl bg-brand-ink">
             <YouTubeEmbed 
-              videoId="R7Dk-i7vJYo" 
+              videoId="MWNWB8HT3fY" 
               title="Entenda a Ansiedade - Dr. Reginaldo Ventola" 
             />
           </div>

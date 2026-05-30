@@ -63,6 +63,7 @@ export const MapSection = () => {
                 style={{ border: 0 }}
                 src={`https://maps.google.com/maps?q=Rua+XV+de+Novembro+268+Mococa+SP&t=&z=17&ie=UTF8&iwloc=&output=embed`}
                 allowFullScreen
+                loading="lazy"
               ></iframe>
             </div>
           </div>

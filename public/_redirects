@@ -1,0 +1,6 @@
+# API redirection Proxy - Requests to /api/* are securely proxied to your Cloud Run backend
+/api/* https://ais-pre-fw4ebuwlb32dgz732frmyt-79413564668.us-east5.run.app/api/:splat 200
+
+# SPA SPA Routing - Fallback routing for React Router DOM
+# This ensures that deep links like /sobre or /agendar are matched by index.html on the client side
+/* /index.html 200

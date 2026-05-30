@@ -13,7 +13,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: '12 sinais de ansiedade: que muitas pessoas não percebem',
     category: "Saúde Mental",
     date: "24 Mar 2026",
-    image: 'https://res.cloudinary.com/dx77zgslr/image/upload/v1776954021/criativo-acalme-se-aspiration-feed_17_pxavwq.png',
+    image: 'https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776954021/criativo-acalme-se-aspiration-feed_17_pxavwq.png',
     content: `A ansiedade é uma das condições emocionais mais comuns da atualidade, afetando milhões de pessoas em todo o mundo. Muitas vezes, ela é descrita apenas como uma "preocupação excessiva", mas a realidade clínica mostra que os sintomas de ansiedade se manifestam de formas muito mais sutis e profundas do que o senso comum imagina.
 
 Na prática clínica em Mococa, é extremamente comum encontrar mulheres que convivem por anos com sinais de ansiedade sem sequer perceber que sua mente está operando em um estado constante de alerta. Esse estado de alerta, conhecido como resposta de "luta ou fuga", acontece quando o cérebro tenta antecipar possíveis problemas ou ameaças, gerando um ciclo vicioso de pensamentos acelerados e tensão emocional que consome a energia vital.

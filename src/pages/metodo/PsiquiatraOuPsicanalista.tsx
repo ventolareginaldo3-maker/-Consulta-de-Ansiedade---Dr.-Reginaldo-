@@ -89,10 +89,10 @@ const PsiquiatraOuPsicanalista = () => {
               Dr. Reginaldo Ventola oferece em Mococa/SP um atendimento que une a profundidade da psicanálise com técnicas integrativas modernas, proporcionando um resgate emocional completo. Assista ao vídeo abaixo para entender como funciona.
             </p>
 
-            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '20px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', marginBottom: '3rem' }}>
+            <div className="relative aspect-video bg-brand-ink rounded-[2rem] overflow-hidden shadow-2xl border border-brand-ink/5 mb-12">
               <YouTubeEmbed 
-                videoId="R7Dk-i7vJYo" 
-                title="Psiquiatra ou Psicanalista? - Dr. Reginaldo Ventola" 
+                videoId="MWNWB8HT3fY" 
+                title="Diferença entre Psiquiatra e Psicanalista - Dr. Reginaldo Ventola" 
               />
             </div>
             

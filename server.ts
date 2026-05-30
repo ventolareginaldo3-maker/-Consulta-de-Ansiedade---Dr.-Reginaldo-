@@ -1,5 +1,4 @@
 import express from "express";
-import { createServer as createViteServer } from "vite";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
@@ -8,398 +7,367 @@ import { google } from "googleapis";
 import dotenv from "dotenv";
 import admin from "firebase-admin";
 import { getFirestore } from "firebase-admin/firestore";
+import compression from "compression";
 
 dotenv.config();
 
-// Initialize Firebase Admin
-const firebaseConfig = JSON.parse(fs.readFileSync(path.join(process.cwd(), "firebase-applet-config.json"), "utf8"));
+// Global catch-all logging for fatal errors
+process.on('uncaughtException', (err) => {
+  console.error(`[FATAL] Uncaught Exception: ${err.message}\n${err.stack}`);
+});
 
-// Inicialização com Nome Exclusivo para evitar conflitos de Projeto
-const adminApp = admin.initializeApp({
-  projectId: firebaseConfig.projectId,
-}, 'acalme_se_app');
-
-const db = getFirestore(adminApp, firebaseConfig.firestoreDatabaseId);
-
-const TOKENS_PATH = path.join(process.cwd(), "google_tokens.json");
-
-// Helper to save tokens locally
-const saveTokensLocally = (tokens: any) => {
-  fs.writeFileSync(TOKENS_PATH, JSON.stringify(tokens));
-};
-
-// Helper to load tokens locally
-const loadTokensLocally = () => {
-  if (fs.existsSync(TOKENS_PATH)) {
-    return JSON.parse(fs.readFileSync(TOKENS_PATH, "utf8"));
-  }
-  return null;
-};
-
-// Test connection on startup
-(async () => {
-  try {
-    console.log("Testando conexão com Firestore...");
-    await db.collection("config").doc("healthcheck").set({ lastCheck: new Date().toISOString() });
-    console.log("Conexão com Firestore OK!");
-  } catch (e: any) {
-    console.error("FALHA NA CONEXÃO COM FIRESTORE:", e.message);
-  }
-})();
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null;
-
-const oauth2Client = new google.auth.OAuth2(
-  process.env.GOOGLE_CLIENT_ID,
-  process.env.GOOGLE_CLIENT_SECRET,
-  process.env.GOOGLE_REDIRECT_URI || `${process.env.APP_URL}/api/auth/google/callback`
-);
+process.on('unhandledRejection', (reason) => {
+  console.error(`[FATAL] Unhandled Rejection: ${reason}`);
+});
 
 async function startServer() {
   const app = express();
-  const PORT = Number(process.env.PORT) || 3000;
+  const PORT = 3000;
+  
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+  const distPath = path.join(__dirname, "dist");
+  const isDev = process.env.NODE_ENV !== "production";
 
+  console.log(`[BOOT] Initializing server in ${process.env.NODE_ENV || 'production'} mode`);
+
+  // Initialize Firebase Admin lazily inside startServer
+  let db: any = null;
+  try {
+    const configPath = path.join(process.cwd(), "firebase-applet-config.json");
+    if (!fs.existsSync(configPath)) {
+      console.error("[BOOT] CRITICAL: firebase-applet-config.json MISSING!");
+    } else {
+      const firebaseConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
+      let adminApp;
+      adminApp = admin.apps.find(app => app?.name === 'acalme_se_app');
+      if (!adminApp) {
+        adminApp = admin.initializeApp({
+          projectId: firebaseConfig.projectId,
+        }, 'acalme_se_app');
+      }
+      db = getFirestore(adminApp, firebaseConfig.firestoreDatabaseId);
+      console.log("[BOOT] Firebase Admin connected");
+    }
+  } catch (e: any) {
+    console.error("[BOOT] Firebase Admin initialization error:", e.message);
+  }
+
+  const TOKENS_PATH = process.env.NODE_ENV === "production" ? "/tmp/google_tokens.json" : path.join(process.cwd(), "google_tokens.json");
+
+  const saveTokensLocally = (tokens: any) => {
+    try {
+      fs.writeFileSync(TOKENS_PATH, JSON.stringify(tokens));
+    } catch (e) {
+      console.error("Erro ao salvar tokens localmente:", e);
+    }
+  };
+
+  const loadTokensLocally = () => {
+    if (fs.existsSync(TOKENS_PATH)) {
+      return JSON.parse(fs.readFileSync(TOKENS_PATH, "utf8"));
+    }
+    return null;
+  };
+
+  // Background Firestore health check
+  if (db) {
+    (async () => {
+      try {
+        await db.collection("config").doc("healthcheck").set({ 
+          lastCheck: new Date().toISOString(),
+          node_env: process.env.NODE_ENV 
+        });
+        console.log("[BOOT] Firestore healthcheck written");
+      } catch (e: any) {
+        console.error("[BOOT] Firestore healthcheck FAILED:", e.message);
+      }
+    })();
+  }
+
+  const oauth2Client = new google.auth.OAuth2(
+    process.env.GOOGLE_CLIENT_ID,
+    process.env.GOOGLE_CLIENT_SECRET,
+    process.env.GOOGLE_REDIRECT_URI || (process.env.APP_URL ? `${process.env.APP_URL}/api/auth/google/callback` : '')
+  );
+
+  app.use(compression());
   app.use(express.json());
+
+  // Native, lightweight CORS middleware
+  app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (origin) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+      res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+      res.setHeader("Access-Control-Allow-Credentials", "true");
+    }
+    if (req.method === "OPTIONS") {
+      return res.sendStatus(200);
+    }
+    next();
+  });
 
   // Request logging middleware
   app.use((req, res, next) => {
     const start = Date.now();
-    const host = req.get('host');
     res.on('finish', () => {
       const duration = Date.now() - start;
-      const logMsg = `[REQUEST] ${new Date().toISOString()} ${req.method} ${req.url} HOST:${host} STATUS:${res.statusCode} ${duration}ms\n`;
-      console.log(logMsg.trim());
-      try {
-        fs.appendFileSync(path.join(process.cwd(), "server_logs.txt"), logMsg);
-      } catch (e) {
-        // Ignore logging errors
+      if (req.url !== "/api/health" && !req.url.includes("/assets/")) {
+        console.log(`[${new Date().toISOString()}] ${req.method} ${req.url} - ${res.statusCode} (${duration}ms)`);
       }
     });
     next();
   });
 
-  // Google Search Console Verification File - Prioridade Máxima
+  // API Health - Must be fast and reliable
+  app.get("/api/health", (req, res) => {
+    res.json({ 
+      status: "ok", 
+      time: new Date().toISOString(),
+      mode: process.env.NODE_ENV || 'production',
+      firebase: db ? "initialized" : "missing",
+      env_check: {
+        stripe: !!process.env.STRIPE_SECRET_KEY,
+        google_client: !!process.env.GOOGLE_CLIENT_ID,
+        app_url: !!process.env.APP_URL
+      }
+    });
+  });
+
+  // ROTA PARA DOWNLOAD DO ZIP DO DESENVOLVIMENTO NO CLOUDFLARE PAGES
+  app.get("/dist-cloudflare.zip", (req, res) => {
+    const zipPath = path.join(process.cwd(), "dist-cloudflare.zip");
+    res.setHeader("Content-Type", "application/zip");
+    res.setHeader("Content-Disposition", "attachment; filename=dist-cloudflare.zip");
+    res.sendFile(zipPath, (err) => {
+      if (err) {
+        console.error("Erro ao enviar o ZIP:", err);
+        res.status(404).send("<h1>Arquivo ZIP ainda nao gerado ou nao encontrado</h1><p>Aguarde um instante ou rode o comando de build para gerar.</p>");
+      }
+    });
+  });
+
+  // Explicit check for APP_URL to avoid malformed links
+  const appUrl = process.env.APP_URL || '';
+  if (!appUrl && !isDev) {
+    console.warn("[WARN] APP_URL not set. Redirects and Stripe might not work correctly.");
+  }
+
+  // google search console
   app.get("/google37375635affddf3f.html", (req, res) => {
-    const filePath = path.join(process.cwd(), "google37375635affddf3f.html");
-    if (fs.existsSync(filePath)) {
-      res.sendFile(filePath);
-    } else {
-      res.send("google-site-verification: google37375635affddf3f");
+    res.send("google-site-verification: google37375635affddf3f");
+  });
+
+  // Sitemap e Robots.txt
+  app.get(["/sitemap.xml", "/robots.txt"], (req, res) => {
+    const fileName = req.path.substring(1);
+    const loc = path.join(distPath, fileName);
+    if (fs.existsSync(loc)) {
+      res.set('Cache-Control', 'public, max-age=3600');
+      return res.sendFile(loc);
     }
+    const publicLoc = path.join(process.cwd(), "public", fileName);
+    if (fs.existsSync(publicLoc)) {
+      return res.sendFile(publicLoc);
+    }
+    res.status(404).send("Not found");
   });
 
   // API routes
-  app.get("/api/health", (req, res) => {
-    res.json({ status: "ok", env: process.env.NODE_ENV });
-  });
-
-  // --- STRIPE INTEGRATION ---
-  app.post("/api/create-checkout-session", async (req, res) => {
-    console.log("[STRIPE] Iniciando criação de sessão...");
-    
-    if (!process.env.STRIPE_SECRET_KEY) {
-      console.error("[STRIPE] Erro: STRIPE_SECRET_KEY não encontrada nos Secrets.");
-      return res.status(500).json({ error: "Configuração de pagamento incompleta (Chave não encontrada)." });
-    }
-
-    const currentStripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-    const { name, phone, date, time } = req.body;
-
-    try {
-      const session = await currentStripe.checkout.sessions.create({
-        payment_method_types: ["card", "pix"],
-        payment_method_options: {
-          pix: {
-            expires_after_seconds: 3600,
-          },
-        },
-        line_items: [
-          {
-            price_data: {
-              currency: "brl",
-              product_data: {
-                name: "Consulta Psicanalítica - Dr. Reginaldo Ventola",
-                description: `Sessão agendada para ${date} às ${time}`,
-              },
-              unit_amount: 15000,
-            },
-            quantity: 1,
-          },
-        ],
-        mode: "payment",
-        // Ajuste para BrowserRouter: o sucesso deve voltar para /agendar
-        success_url: `${process.env.APP_URL}/agendar?success=true&session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${process.env.APP_URL}/agendar?canceled=true`,
-        metadata: {
-          name,
-          phone,
-          date,
-          time,
-        },
-      });
-
-      console.log("[STRIPE] Sessão criada com sucesso:", session.id);
-      res.json({ url: session.url });
-    } catch (error: any) {
-      console.error("[STRIPE] Erro ao criar sessão:", error.message);
-      res.status(500).json({ error: error.message });
-    }
-  });
-
-  // --- GOOGLE CALENDAR INTEGRATION ---
   app.get("/api/auth/google/url", (req, res) => {
     const url = oauth2Client.generateAuthUrl({
       access_type: "offline",
       scope: ["https://www.googleapis.com/auth/calendar.events"],
+      prompt: "consent"
     });
     res.json({ url });
   });
 
   app.get("/api/auth/google/callback", async (req, res) => {
     const { code, error } = req.query;
-    
-    if (error) {
-      console.error("Erro retornado pelo Google:", error);
-      return res.status(400).send(`Erro do Google: ${error}`);
-    }
+    if (error) return res.redirect(`${process.env.FRONTEND_URL || process.env.APP_URL || ''}/admin?error=${error}`);
 
     try {
       const { tokens } = await oauth2Client.getToken(code as string);
+      saveTokensLocally(tokens);
       
-      // Salvar tokens LOCALMENTE para evitar erros de permissão do Firestore
-      try {
-        saveTokensLocally(tokens);
-        console.log("Tokens salvos localmente com sucesso");
-      } catch (fileError: any) {
-        console.error("ERRO AO SALVAR ARQUIVO DE TOKENS:", fileError);
-        throw new Error(`Erro ao salvar credenciais: ${fileError.message}`);
-      }
+      // Save to Firebase too for persistence across deploys
+      await db.collection("settings").doc("google_calendar_v2").set({
+        tokens,
+        updatedAt: new Date().toISOString()
+      });
 
       res.send(`
         <html>
-          <body style="font-family: sans-serif; text-align: center; padding: 50px; background: #fdfcfb; color: #433434;">
-            <div style="max-width: 500px; margin: 0 auto; padding: 40px; background: white; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-              <h1 style="color: #4CAF50; font-size: 32px; margin-bottom: 20px;">Agenda Conectada!</h1>
-              <p style="font-size: 18px; line-height: 1.6;">Seu Google Agenda foi integrado com sucesso ao Método Acalme-se.</p>
-              <p style="font-size: 14px; color: #888;">Esta janela será fechada em instantes...</p>
+          <body style="font-family: sans-serif; text-align: center; padding: 50px; background: #fdfcfb;">
+            <div style="max-width: 500px; margin: 0 auto; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+              <h1 style="color: #4CAF50;">Agenda Conectada!</h1>
+              <p>O Google Agenda foi integrado com sucesso.</p>
+              <script>
+                if (window.opener) window.opener.postMessage({ type: 'GOOGLE_AUTH_SUCCESS' }, '*');
+                setTimeout(() => window.close(), 2000);
+              </script>
             </div>
-            <script>
-              if (window.opener) {
-                window.opener.postMessage({ type: 'GOOGLE_AUTH_SUCCESS' }, '*');
-              }
-              setTimeout(() => window.close(), 3000);
-            </script>
           </body>
         </html>
       `);
-    } catch (error: any) {
-      console.error("Erro ao autenticar com Google:", error);
-      res.status(500).send(`
-        <html>
-          <body style="font-family: sans-serif; text-align: center; padding: 50px;">
-            <h1 style="color: #f44336;">Erro de Autenticação</h1>
-            <p>Não foi possível conectar com o Google.</p>
-            <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; font-family: monospace; margin-top: 20px; text-align: left; display: inline-block;">
-              <strong>Detalhes do erro:</strong><br/>
-              ${error.message || JSON.stringify(error)}
-            </div>
-            <br/><br/>
-            <button onclick="window.close()" style="padding: 10px 20px; cursor: pointer;">Fechar Janela</button>
-          </body>
-        </html>
-      `);
+    } catch (e: any) {
+      res.status(500).send(`Erro na autenticação: ${e.message}`);
     }
   });
 
   app.get("/api/auth/google/status", async (req, res) => {
     try {
       const localTokens = loadTokensLocally();
-      if (localTokens) {
-        return res.json({ connected: true });
-      }
+      if (localTokens) return res.json({ connected: true });
+      
       const doc = await db.collection("settings").doc("google_calendar_v2").get();
-      if (doc.exists) {
-        return res.json({ connected: true });
-      }
-      const oldDoc = await db.collection("config").doc("google_calendar").get();
-      res.json({ connected: oldDoc.exists });
+      res.json({ connected: doc.exists });
     } catch (error) {
       res.status(500).json({ error: "Erro ao verificar status" });
     }
   });
 
-  // Endpoint para confirmar pagamento e criar evento na agenda
+  app.post("/api/create-checkout-session", async (req, res) => {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      return res.status(500).json({ error: "Stripe key missing" });
+    }
+    try {
+      const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+      const { name, phone, date, time } = req.body;
+      const origin = req.headers.origin || process.env.FRONTEND_URL || process.env.APP_URL || "";
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card", "pix"],
+        line_items: [{
+          price_data: {
+            currency: "brl",
+            product_data: { 
+              name: "Consulta Psicanalítica - Dr. Reginaldo Ventola", 
+              description: `Sessão para ${date} às ${time}` 
+            },
+            unit_amount: 15000,
+          },
+          quantity: 1,
+        }],
+        mode: "payment",
+        success_url: `${origin}/agendar?success=true&session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${origin}/agendar?canceled=true`,
+        metadata: { name, phone, date, time },
+      });
+      res.json({ url: session.url });
+    } catch (e: any) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+
   app.post("/api/confirm-payment", async (req, res) => {
     const { session_id } = req.body;
-    if (!stripe) return res.status(500).json({ error: "Stripe não configurado" });
+    if (!process.env.STRIPE_SECRET_KEY) return res.status(500).json({ error: "Stripe missing" });
 
     try {
+      const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
       const session = await stripe.checkout.sessions.retrieve(session_id);
+      
       if (session.payment_status === 'paid') {
         const { name, phone, date, time } = session.metadata || {};
         
-        // 1. Criar agendamento no Firestore
+        // 1. Persist to Firestore
         const appointmentRef = await db.collection("appointments").add({
-          name,
-          phone,
-          dateTime: `${date}T${time}:00`,
+          name, phone, dateTime: `${date}T${time}:00`,
           status: 'confirmed',
           createdAt: admin.firestore.FieldValue.serverTimestamp(),
           stripeSessionId: session_id
         });
 
-        // 2. Criar evento no Google Calendar
+        // 2. Google Calendar Event
         let tokens = loadTokensLocally();
-        
         if (!tokens) {
           const configDoc = await db.collection("settings").doc("google_calendar_v2").get();
-          if (configDoc.exists) {
-            tokens = configDoc.data()?.tokens;
-          } else {
-            // Fallback para o caminho antigo se existir
-            const oldConfig = await db.collection("config").doc("google_calendar").get();
-            if (oldConfig.exists) {
-              tokens = oldConfig.data()?.tokens;
-            }
-          }
+          tokens = configDoc.data()?.tokens;
         }
 
         if (tokens) {
           oauth2Client.setCredentials(tokens);
           const calendar = google.calendar({ version: "v3", auth: oauth2Client });
-
-          const startDateTime = new Date(`${date}T${time}:00`);
-          const endDateTime = new Date(startDateTime.getTime() + 60 * 60 * 1000); // 1 hora de duração
+          const start = new Date(`${date}T${time}:00`);
+          const end = new Date(start.getTime() + 60 * 60 * 1000);
 
           await calendar.events.insert({
             calendarId: "primary",
             requestBody: {
               summary: `Consulta: ${name}`,
-              description: `Paciente: ${name}\nWhatsApp: ${phone}\nAgendado via Método Acalme-se`,
-              start: { dateTime: startDateTime.toISOString() },
-              end: { dateTime: endDateTime.toISOString() },
+              description: `Paciente: ${name}\nWhatsApp: ${phone}`,
+              start: { dateTime: start.toISOString() },
+              end: { dateTime: end.toISOString() },
             },
           });
         }
-
         res.json({ success: true, appointmentId: appointmentRef.id });
       } else {
         res.status(400).json({ error: "Pagamento não confirmado" });
       }
-    } catch (error: any) {
-      console.error("Erro ao confirmar pagamento:", error);
-      res.status(500).json({ error: error.message });
+    } catch (e: any) {
+      res.status(500).json({ error: e.message });
     }
   });
 
-  // Vite middleware for development
-  const distPath = path.join(__dirname, "dist");
-  const isDev = process.env.NODE_ENV !== "production" || !fs.existsSync(distPath);
-  
-  console.log(`[SERVER] Mode: ${isDev ? 'DEVELOPMENT' : 'PRODUCTION'}`);
-  console.log(`[SERVER] Dist path: ${distPath}`);
-  console.log(`[SERVER] Dist exists: ${fs.existsSync(distPath)}`);
-
-  // Explicit routes for SPA paths to ensure they are handled correctly
-  const spaPaths = [
-    "/", 
-    "/triagem", 
-    "/agendar", 
-    "/metodo-e-tratamento", 
-    "/sobre", 
-    "/contato", 
-    "/blog", 
-    "/ebooks", 
-    "/depoimentos", 
-    "/sintomas-de-ansiedade", 
-    "/mente-ansiosa", 
-    "/ansiedade-e-depressao", 
-    "/ansiedade-sob-controle", 
-    "/guia-de-resgate", 
-    "/psiquiatra-ou-psicanalista",
-    "/admin",
-    "/confirmacao-plano",
-    "/politica-de-privacidade",
-    "/termos-de-uso",
-    "/iridologia-e-naturopatia",
-    "/ansiedade-em-mococa",
-    "/especialista-ansiedade-mococa",
-    "/adoecimento-silencioso"
-  ];
-  
-  // Handle both with and without trailing slash
-  const spaPathsWithTrailing = spaPaths.flatMap(p => p === "/" ? [p] : [p, `${p}/`]);
-
-  app.get(spaPathsWithTrailing, async (req, res, next) => {
-    console.log(`[SPA-ROUTE] Handling ${req.url}`);
-    if (isDev) {
-      try {
-        const vite = req.app.get('vite');
-        if (vite) {
-          let template = fs.readFileSync(path.resolve(__dirname, "index.html"), "utf-8");
-          template = await vite.transformIndexHtml(req.url, template);
-          return res.status(200).set({ "Content-Type": "text/html" }).end(template);
-        } else {
-          // If vite is not ready yet, just serve the raw file
-          return res.sendFile(path.resolve(__dirname, "index.html"));
-        }
-      } catch (e) {
-        console.error(`[SPA-ROUTE] Error in dev handler for ${req.url}:`, e);
-        return next(e);
-      }
-    } else {
-      return res.sendFile(path.join(distPath, "index.html"));
-    }
-  });
-
-  // Vite middleware for development
+  // Vite setup or Static serving
   if (isDev) {
-    console.log("Starting in DEVELOPMENT mode with Vite middleware");
+    console.log("[BOOT] Loading Vite for development...");
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
-      appType: "custom",
+      appType: "spa",
     });
-    app.set('vite', vite); // Store vite instance for use in routes
     app.use(vite.middlewares);
-
+    
     app.get("*", async (req, res, next) => {
-      const url = req.originalUrl;
-      console.log(`[CATCH-ALL] Requested URL: ${url}`);
-      
-      // Skip API routes
-      if (url.startsWith("/api/")) {
-        console.log(`[CATCH-ALL] Skipping API route: ${url}`);
-        return next();
-      }
-
+      if (req.url.startsWith("/api/")) return next();
       try {
         let template = fs.readFileSync(path.resolve(__dirname, "index.html"), "utf-8");
-        template = await vite.transformIndexHtml(url, template);
-        res.status(200).set({ "Content-Type": "text/html" }).end(template);
-      } catch (e: any) {
-        console.error(`[CATCH-ALL] Error transforming HTML for ${url}:`, e);
-        vite.ssrFixStacktrace(e);
+        template = await vite.transformIndexHtml(req.url, template);
+        res.status(200).set({ "Content-Type": "text/html", "Cache-Control": "no-cache" }).end(template);
+      } catch (e) {
         next(e);
       }
     });
   } else {
-    console.log("Starting in PRODUCTION mode");
+    console.log("[BOOT] Serving static files from dist");
     if (fs.existsSync(distPath)) {
-      app.use(express.static(distPath));
+      // Improved caching for static assets
+      app.use(express.static(distPath, { 
+        maxAge: '1y', 
+        index: false,
+        immutable: true,
+        setHeaders: (res, path) => {
+          if (path.endsWith('.html')) {
+            res.setHeader('Cache-Control', 'no-cache');
+          } else {
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+          }
+        }
+      }));
+
       app.get("*", (req, res) => {
+        if (req.url.startsWith("/api/")) return res.status(404).json({ error: "API route not found" });
+        // Set no-cache for index.html to ensure updates are picked up but use ETag for validation
+        res.setHeader('Cache-Control', 'no-cache');
         res.sendFile(path.join(distPath, "index.html"));
       });
     } else {
-      console.error("DIST directory not found in production mode!");
+      console.error("[CRITICAL] dist directory missing!");
+      app.get("*", (req, res) => res.status(500).send("Application not built correctly"));
     }
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`[BOOT] Listening on port ${PORT}`);
   });
 }
 
-startServer();
+startServer().catch(err => {
+  console.error("[CRITICAL] Startup failed:", err);
+  process.exit(1);
+});

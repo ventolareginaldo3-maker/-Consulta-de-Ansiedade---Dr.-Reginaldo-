@@ -42,7 +42,7 @@ export const DeepPsychologicalBlock = () => {
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
               <img 
-                src="https://res.cloudinary.com/dx77zgslr/image/upload/v1776954748/Esgotamento-_burnout-Ansiedade-Mococa-Psiquiatra_qbq7f6.png" 
+                src="https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776954748/Esgotamento-_burnout-Ansiedade-Mococa-Psiquiatra_qbq7f6.png" 
                 alt="Ciclo silencioso da ansiedade"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms] ease-out"
                 referrerPolicy="no-referrer"
@@ -64,7 +64,7 @@ export const DeepPsychologicalBlock = () => {
           </div>
           <div className="relative aspect-video bg-brand-ink rounded-[2.5rem] overflow-hidden shadow-2xl">
             <YouTubeEmbed 
-              videoId="R7Dk-i7vJYo" 
+              videoId="MWNWB8HT3fY" 
               title="O Ciclo Silencioso - Método Acalme-se" 
             />
           </div>

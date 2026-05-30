@@ -10,16 +10,16 @@ const AboutProfessional = () => {
         viewport={{ once: true }}
         className="lg:col-span-5"
       >
-        <div className="relative aspect-[4/5] rounded-[3rem] lg:rounded-[5rem] overflow-hidden shadow-2xl border-8 border-white">
-          <img 
-            src="https://res.cloudinary.com/djl7c37my/image/upload/v1777042123/31C6BAD6-F164-41A6-9A84-E30508C3A343_e9f1bh.jpg" 
-            alt="Dr. Reginaldo Ventola" 
-            className="w-full h-full object-cover object-[center_top] hover:scale-105 transition-transform duration-[2000ms] ease-out"
-            referrerPolicy="no-referrer"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/20 via-transparent to-transparent" />
-        </div>
+          <div className="relative aspect-[4/5] rounded-[3rem] lg:rounded-[5rem] overflow-hidden shadow-2xl border-8 border-white">
+            <img 
+              src="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777042123/31C6BAD6-F164-41A6-9A84-E30508C3A343_e9f1bh.jpg" 
+              alt="Dr. Reginaldo Ventola" 
+              className="w-full h-full object-cover object-[center_top] hover:scale-105 transition-transform duration-[2000ms] ease-out"
+              referrerPolicy="no-referrer"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/20 via-transparent to-transparent" />
+          </div>
       </motion.div>
 
       <motion.div 

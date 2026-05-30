@@ -90,7 +90,7 @@ const MetodoAcalmesePage = () => {
             >
               <div className="aspect-[4/5] rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-2xl shadow-clinic-brand-primary/20 border-4 border-white group bg-white relative">
                 <img 
-                  src="https://res.cloudinary.com/djl7c37my/image/upload/v1777074754/Psiquiatra_Mococa_2_coeood.png" 
+                  src="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777074754/Psiquiatra_Mococa_2_coeood.png" 
                   alt="Tratamento de Ansiedade em Mococa - Dr. Reginaldo Ventola - Para Mulheres" 
                   className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
@@ -129,7 +129,7 @@ const MetodoAcalmesePage = () => {
             <div className="relative">
               <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white group bg-white">
                 <img 
-                  src="https://res.cloudinary.com/dx77zgslr/image/upload/v1776953791/criativo-acalme-se-aspiration-feed_12_wefybf.png" 
+                  src="https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776953791/criativo-acalme-se-aspiration-feed_12_wefybf.png" 
                   alt="Realidade da Ansiedade" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
@@ -208,7 +208,7 @@ const MetodoAcalmesePage = () => {
                 className="relative"
               >
                 <img 
-                  src="https://res.cloudinary.com/dx77zgslr/image/upload/v1776954021/criativo-acalme-se-aspiration-feed_17_pxavwq.png" 
+                  src="https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776954021/criativo-acalme-se-aspiration-feed_17_pxavwq.png" 
                   alt="A ansiedade não define quem você é" 
                   className="w-full rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.1)]"
                   referrerPolicy="no-referrer"
@@ -256,7 +256,7 @@ const MetodoAcalmesePage = () => {
               <div className="relative">
                 <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white group bg-white shadow-clinic-brand-primary/10">
                   <img 
-                    src="https://res.cloudinary.com/dx77zgslr/image/upload/v1776940212/criativo-acalme-se-curiosity-feed_2_ki0sqh.png" 
+                    src="https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776940212/criativo-acalme-se-curiosity-feed_2_ki0sqh.png" 
                     alt="O Ponto de Virada - Método Acalme-se" 
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     referrerPolicy="no-referrer"
@@ -449,7 +449,7 @@ const MetodoAcalmesePage = () => {
               className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white group"
             >
               <img 
-                src="https://res.cloudinary.com/djl7c37my/image/upload/v1777074754/Psiquiatra_Mococa_2_coeood.png" 
+                src="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777074754/Psiquiatra_Mococa_2_coeood.png" 
                 alt="Transformação e Paz Interior - Método Acalme-se" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 referrerPolicy="no-referrer"
