@@ -78,21 +78,21 @@ const PsiquiatraOuPsicanalista = () => {
           {/* Bloco 4: Contexto Local + CTA */}
           <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
             {/* Dr. Reginaldo image */}
-            <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 2rem', border: '3px solid #B89890' }}>
-              <img src="https://res.cloudinary.com/djl7c37my/image/upload/v1777042123/31C6BAD6-F164-41A6-9A84-E30508C3A343_e9f1bh.jpg" alt="Dr. Reginaldo Ventola" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+            <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 2rem', border: '3px solid #B89890', backgroundColor: '#161413' }}>
+              <img src="https://res.cloudinary.com/djl7c37my/image/upload/v1780252691/Gemini_Generated_Image_h03i37h03i37h03i_grkrmy.png" alt="Dr. Reginaldo Vêntola" style={{ width: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#161413' }} referrerPolicy="no-referrer" loading="lazy" />
             </div>
 
             <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.6rem', fontWeight: 400, color: '#3D3630', marginBottom: '1.2rem', lineHeight: 1.4 }}>
               Tratamento de Ansiedade em Mococa
             </h3>
             <p style={{ fontSize: '1.02rem', lineHeight: 2, color: '#5C534D', maxWidth: '860px', margin: '0 auto 2.5rem' }}>
-              Dr. Reginaldo Ventola oferece em Mococa/SP um atendimento que une a profundidade da psicanálise com técnicas integrativas modernas, proporcionando um resgate emocional completo. Assista ao vídeo abaixo para entender como funciona.
+              Dr. Reginaldo Vêntola oferece em Mococa/SP um atendimento que une a profundidade da psicanálise com técnicas integrativas modernas, proporcionando um resgate emocional completo. Assista ao vídeo abaixo para entender como funciona.
             </p>
 
             <div className="relative aspect-video bg-brand-ink rounded-[2rem] overflow-hidden shadow-2xl border border-brand-ink/5 mb-12">
               <YouTubeEmbed 
                 videoId="MWNWB8HT3fY" 
-                title="Diferença entre Psiquiatra e Psicanalista - Dr. Reginaldo Ventola" 
+                title="Diferença entre Psiquiatra e Psicanalista - Dr. Reginaldo Vêntola" 
               />
             </div>
             

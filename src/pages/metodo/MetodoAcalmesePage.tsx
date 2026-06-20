@@ -61,7 +61,7 @@ const MetodoAcalmesePage = () => {
                     Isso não é drama. Isso é esgotamento emocional.
                   </p>
                   <p>
-                    O Dr. Reginaldo Ventola entende isso. Ele vai te mostrar <strong>como reprogramar sua mente</strong> para que você volte a se sentir segura, leve e no controle.
+                    O Dr. Reginaldo Vêntola entende isso. Ele vai te mostrar <strong>como reprogramar sua mente</strong> para que você volte a se sentir segura, leve e no controle.
                   </p>
                 </div>
               </div>
@@ -91,7 +91,7 @@ const MetodoAcalmesePage = () => {
               <div className="aspect-[4/5] rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-2xl shadow-clinic-brand-primary/20 border-4 border-white group bg-white relative">
                 <img 
                   src="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777074754/Psiquiatra_Mococa_2_coeood.png" 
-                  alt="Tratamento de Ansiedade em Mococa - Dr. Reginaldo Ventola - Para Mulheres" 
+                  alt="Tratamento de Ansiedade em Mococa - Dr. Reginaldo Vêntola - Para Mulheres" 
                   className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                   loading="eager"
@@ -569,11 +569,11 @@ const MetodoAcalmesePage = () => {
                 to="/agendar"
                 className="inline-flex items-center justify-center gap-4 px-16 py-8 bg-brand-accent text-white rounded-full text-base font-bold uppercase tracking-widest hover:scale-105 transition-all group shadow-xl shadow-brand-accent/20 animate-cta-pulse"
               >
-                [ Agendar Avaliação com Dr. Reginaldo Ventola ]
+                [ Agendar Avaliação com Dr. Reginaldo Vêntola ]
               </Link>
               
               <div className="space-y-2 pt-8 border-t border-brand-ink/10 w-full max-w-md mx-auto">
-                <p className="text-xl font-serif italic text-brand-ink font-bold">Dr. Reginaldo Ventola | Psicanalista</p>
+                <p className="text-xl font-serif italic text-brand-ink font-bold">Dr. Reginaldo Vêntola | Psicanalista</p>
                 <p className="text-[10px] uppercase tracking-widest text-brand-ink/60 font-black">Registro SPMR 0152021/SP</p>
                 <p className="text-xs uppercase tracking-widest text-brand-accent font-bold pt-4 mb-8">Atendimento Ético, Sigiloso e Humanizado</p>
                 

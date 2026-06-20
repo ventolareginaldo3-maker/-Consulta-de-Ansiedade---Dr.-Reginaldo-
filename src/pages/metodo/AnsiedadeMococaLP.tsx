@@ -69,7 +69,7 @@ const AnsiedadeMococaLP = () => {
               <div className="aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl shadow-clinic-brand-primary/20 border-4 border-white group bg-white relative">
                 <img 
                   src="https://res.cloudinary.com/djl7c37my/image/upload/v1777042123/31C6BAD6-F164-41A6-9A84-E30508C3A343_e9f1bh.jpg" 
-                  alt="Psicanalista em Mococa - Dr. Reginaldo Ventola" 
+                  alt="Psicanalista em Mococa - Dr. Reginaldo Vêntola" 
                   className="w-full h-full object-cover object-[center_top] transition-transform duration-1000 group-hover:scale-110 relative z-40"
                   referrerPolicy="no-referrer"
                   loading="eager"
@@ -192,14 +192,14 @@ const AnsiedadeMococaLP = () => {
                   Tratamento de Ansiedade em Mococa
                 </h2>
                 <p className="max-w-3xl mx-auto text-lg text-brand-ink/70 font-light leading-relaxed">
-                  Dr. Reginaldo Ventola oferece em Mococa/SP um atendimento que une a profundidade da psicanálise com técnicas integrativas modernas, proporcionando um resgate emocional completo. Assista ao vídeo abaixo para entender como funciona.
+                  Dr. Reginaldo Vêntola oferece em Mococa/SP um atendimento que une a profundidade da psicanálise com técnicas integrativas modernas, proporcionando um resgate emocional completo. Assista ao vídeo abaixo para entender como funciona.
                 </p>
               </div>
               
               <div className="relative aspect-video bg-brand-ink rounded-[2rem] lg:rounded-[4rem] overflow-hidden shadow-2xl border border-brand-ink/5">
                 <YouTubeEmbed 
                   videoId="MWNWB8HT3fY" 
-                  title="Apresentação Dr. Reginaldo Ventola - Método Acalme-se" 
+                  title="Apresentação Dr. Reginaldo Vêntola - Método Acalme-se" 
                 />
               </div>
             </div>
@@ -265,7 +265,7 @@ const AnsiedadeMococaLP = () => {
               Muitas pessoas tentam resolver a ansiedade de forma superficial, tratando apenas os sintomas. Um psicanalista ajuda a entender as causas profundas do seu sofrimento, proporcionando uma mudança real e duradoura.
             </p>
             <p>
-              O Método Acalme-se, desenvolvido pelo Dr. Reginaldo Ventola, une a psicanálise clinical com outras técnicas integrativas para oferecer um cuidado completo para a sua saúde mental.
+              O Método Acalme-se, desenvolvido pelo Dr. Reginaldo Vêntola, une a psicanálise clinical com outras técnicas integrativas para oferecer um cuidado completo para a sua saúde mental.
             </p>
           </div>
         </div>

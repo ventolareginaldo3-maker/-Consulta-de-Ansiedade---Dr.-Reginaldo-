@@ -25,6 +25,18 @@
     </video:video>
   </url>
   <url>
+    <loc>https://www.metodoacalmese.com.br/ansiedade-feminina</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.metodoacalmese.com.br/saude-emocional-feminina</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.metodoacalmese.com.br/psiquiatra-ou-psicanalista</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -32,7 +44,7 @@
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Psiquiatra ou Psicanalista? Entenda as Diferenças</video:title>
-      <video:description>Dr. Reginaldo Ventola explica as abordagens de psiquiatria e psicanálise e como o Método Acalme-se une o melhor de cada uma.</video:description>
+      <video:description>Dr. Reginaldo Vêntola explica as abordagens de psiquiatria e psicanálise e como o Método Acalme-se une o melhor de cada uma.</video:description>
       <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
     </video:video>
   </url>
@@ -43,7 +55,7 @@
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Entenda a Ansiedade e Depressão - Dr. Reginaldo Ventola</video:title>
+      <video:title>Entenda a Ansiedade e Depressão - Dr. Reginaldo Vêntola</video:title>
       <video:description>Esclarecimentos sobre a relação entre ansiedade e depressão e como o tratamento adequado pode transformar sua vida.</video:description>
       <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
     </video:video>
@@ -55,7 +67,7 @@
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Ansiedade Sob Controle - Dra. Reginaldo Ventola</video:title>
+      <video:title>Ansiedade Sob Controle - Dra. Reginaldo Vêntola</video:title>
       <video:description>Estratégias práticas e embasamento clínico para manter a ansiedade sob controle no dia a dia.</video:description>
       <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
     </video:video>
@@ -73,7 +85,7 @@
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Tratamento de Ansiedade em Mococa - Dr. Reginaldo Ventola</video:title>
+      <video:title>Tratamento de Ansiedade em Mococa - Dr. Reginaldo Vêntola</video:title>
       <video:description>Assista ao vídeo explicativo sobre o tratamento de ansiedade disponível em Mococa com o Método Acalme-se.</video:description>
       <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
     </video:video>
@@ -86,7 +98,7 @@
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/MWNWB8HT3fY/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Especialista em Ansiedade em Mococa</video:title>
-      <video:description>Conheça a abordagem do Dr. Reginaldo Ventola, especialista em ansiedade em Mococa, e como o método funciona.</video:description>
+      <video:description>Conheça a abordagem do Dr. Reginaldo Vêntola, especialista em ansiedade em Mococa, e como o método funciona.</video:description>
       <video:player_loc>https://www.youtube.com/embed/MWNWB8HT3fY</video:player_loc>
     </video:video>
   </url>

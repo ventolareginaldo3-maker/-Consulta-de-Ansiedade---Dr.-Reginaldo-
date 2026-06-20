@@ -34,7 +34,7 @@ export const Hero = () => {
         </div>
         <div className="lg:col-span-5 relative hero-fade-in-delayed">
           <div className="relative aspect-[4/5] rounded-[3rem] lg:rounded-[5rem] overflow-hidden shadow-2xl border-8 border-white">
-            <img src="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto,w_480/v1777041959/Psiquiatra_Mococa_j0pzl6.png" alt="Dr. Reginaldo Ventola - Psicanalista em Mococa" className="w-full h-full object-cover object-[center_top]" loading="eager" width="480" height="600" fetchPriority="high" decoding="async" />
+            <img src="https://res.cloudinary.com/djl7c37my/image/upload/v1781979991/Ansiedade_sintomas_Psiquiatra_Mococa_gp3siy.png" alt="Dr. Reginaldo Vêntola - Psicanalista em Mococa" className="w-full h-full object-cover object-[center_top]" loading="eager" width="480" height="600" fetchPriority="high" decoding="async" />
           </div>
           <div className="absolute -bottom-6 -left-6 lg:-left-12 bg-white p-6 lg:p-8 rounded-3xl shadow-2xl border border-clinic-border-subtle max-w-[200px] lg:max-w-[240px]">
             <p className="text-3xl lg:text-4xl font-serif text-clinic-text-rose mb-1">2.5k+</p>

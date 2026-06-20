@@ -45,7 +45,7 @@ const BlogPage = () => {
               "description": selectedPost.content.substring(0, 160),
               "author": {
                 "@type": "Person",
-                "name": "Dr. Reginaldo Ventola"
+                "name": "Dr. Reginaldo Vêntola"
               },
               "datePublished": "2024-03-15",
               "publisher": {

@@ -107,7 +107,7 @@ const AnsiedadeSobControlePage = () => {
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl mb-12">
                <YouTubeEmbed 
                 videoId="MWNWB8HT3fY" 
-                title="Ansiedade Sob Controle - Dr. Reginaldo Ventola" 
+                title="Ansiedade Sob Controle - Dr. Reginaldo Vêntola" 
               />
             </div>
             <Link 

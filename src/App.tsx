@@ -12,6 +12,8 @@ import { analytics } from './services/analytics';
 
 // Main pages - loaded immediately for speed on initial entry
 import Home from './pages/home/Home';
+import AnsiedadeFemininaPage from './pages/ansiedade-feminina/AnsiedadeFemininaPage';
+import SaudeEmocionalFemininaPage from './pages/saude-emocional-feminina/SaudeEmocionalFemininaPage';
 
 // Lazy load non-critical pages and widgets
 const AIAssistant = lazy(() => import('./components/ui/AIAssistant').then(m => ({ default: m.AIAssistant })));
@@ -87,6 +89,8 @@ function App() {
                 <Route path="/iridologia-e-naturopatia" element={<IridologiaPage />} />
                 <Route path="/ansiedade-em-mococa" element={<AnsiedadeMococaLP />} />
                 <Route path="/especialista-ansiedade-mococa" element={<AnsiedadeMococaSEO />} />
+                <Route path="/ansiedade-feminina" element={<AnsiedadeFemininaPage />} />
+                <Route path="/saude-emocional-feminina" element={<SaudeEmocionalFemininaPage />} />
                 <Route path="/adoecimento-silencioso" element={<AdoecimentoSilenciosoPage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

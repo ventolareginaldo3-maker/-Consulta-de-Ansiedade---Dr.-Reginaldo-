@@ -12,8 +12,8 @@ const AboutProfessional = () => {
       >
           <div className="relative aspect-[4/5] rounded-[3rem] lg:rounded-[5rem] overflow-hidden shadow-2xl border-8 border-white">
             <img 
-              src="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777042123/31C6BAD6-F164-41A6-9A84-E30508C3A343_e9f1bh.jpg" 
-              alt="Dr. Reginaldo Ventola" 
+              src="https://res.cloudinary.com/djl7c37my/image/upload/v1780252620/Gemini_Generated_Image_qyxq5fqyxq5fqyxq_vhjiww.png" 
+              alt="Dr. Reginaldo Vêntola" 
               className="w-full h-full object-cover object-[center_top] hover:scale-105 transition-transform duration-[2000ms] ease-out"
               referrerPolicy="no-referrer"
               loading="lazy"
@@ -34,7 +34,7 @@ const AboutProfessional = () => {
         </div>
         
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-8 leading-[1.1] lg:leading-[0.9] tracking-tighter text-brand-ink">
-          Dr. Reginaldo Ventola <br />
+          Dr. Reginaldo Vêntola <br />
           <span className="italic font-light text-brand-accent">Doutor em Psicanálise</span>
         </h2>
         

@@ -28,7 +28,7 @@ const MenteAnsiosaPage = () => {
           <h1 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'clamp(2.4rem,4.5vw,3.2rem)', fontWeight:300, color:'#3D3630', lineHeight:1.15, marginBottom:'1.5rem' }}>
             O que você chama de ansiedade<br />
             <span style={{ display:'block', color:'#B89890', fontStyle:'italic', marginTop:'0.3rem' }}>
-              é sua mente pedindo socorro.
+              pode ser sua mente tentando ser ouvida
             </span>
           </h1>
           
@@ -37,20 +37,30 @@ const MenteAnsiosaPage = () => {
           
           {/* Corpo do Texto */}
           <p style={{ fontSize:'1.05rem', lineHeight:2.1, color:'#5C534D', marginBottom:'1.5rem' }}>
-            Se o <strong>"Ciclo da Exaustão Invisível"</strong> ressoa com a sua rotina, saiba que o primeiro passo para a cura é o reconhecimento. Você passou anos normalizando a tensão no peito, a insônia e a sensação de que precisa estar sempre "pronta", mesmo por dentro sentindo que vai desmoronar.
+            Quando o ciclo da exaustão invisível começa a fazer parte da rotina, o primeiro passo não é se culpar. É reconhecer.
           </p>
           
           <p style={{ fontSize:'1.05rem', lineHeight:2.1, color:'#5C534D', marginBottom:'1.5rem' }}>
-            A verdade clínica é simples: <strong>viver em estado de alerta máximo não é sua personalidade.</strong> É um mecanismo de defesa que, com o tempo, começou a consumir a própria energia que deveria usar para viver.
+            Talvez você tenha passado anos normalizando a tensão no peito, as noites mal dormidas, a mente sempre antecipando problemas e a sensação de precisar estar pronta para tudo, mesmo quando por dentro já se sente no limite.
+          </p>
+          
+          <p style={{ fontSize:'1.05rem', lineHeight:2.1, color:'#5C534D', marginBottom:'1.5rem' }}>
+            Viver em estado de alerta não é personalidade.<br />
+            É um mecanismo de defesa que, com o tempo, começa a consumir a energia que deveria sustentar sua vida.
+          </p>
+
+          <p style={{ fontSize:'1.05rem', lineHeight:2.1, color:'#5C534D', marginBottom:'1.5rem' }}>
+            A ansiedade não precisa ser uma sentença.<br />
+            Ela pode ser o começo de um reencontro com partes suas que ficaram esquecidas enquanto você tentava dar conta de tudo.
           </p>
           
           <p style={{ fontSize:'1.05rem', lineHeight:2.1, color:'#5C534D', marginBottom:'2.5rem' }}>
-            Viver com ansiedade não é uma sentença. É um convite para reencontrar quem você era antes de o medo ditar as regras. É a oportunidade de trocar a sobrevivência pela presença, e a culpa pela leveza que você merece sentir todos os dias.
+            Existe um caminho para trocar a sobrevivência pela presença, a culpa pelo cuidado e o medo por uma vida com mais leveza.
           </p>
           
           {/* Botão Pulsante */}
           <a href="/agendar" style={{ display:'inline-block', padding:'1.1rem 3rem', backgroundColor:'#B89890', color:'#fff', fontFamily:"'Inter',sans-serif", fontWeight:500, fontSize:'0.72rem', letterSpacing:'0.2em', textTransform:'uppercase', textDecoration:'none', borderRadius:'25px', transition:'all 0.3s ease', animation:'pulse 3s infinite', border:'none', cursor:'pointer' }}>
-            Quero Iniciar Minha Jornada de Alívio
+            Quero dar o primeiro passo
           </a>
           
           <style dangerouslySetInnerHTML={{ __html: `
@@ -64,7 +74,7 @@ const MenteAnsiosaPage = () => {
         {/* COLUNA DE IMAGEM */}
         <div style={{ position:'relative', height:'100%', minHeight:'620px', display:'flex', alignItems:'center' }}>
           <img 
-            src='https://res.cloudinary.com/dx77zgslr/image/upload/v1776955133/Depress%C3%A3o-Ansiedade_MococaSP_gqfsoa.png' 
+            src='https://res.cloudinary.com/djl7c37my/image/upload/v1781982545/Ansiedade_sintomas_Mococa_uqwfcf.png' 
             alt='Mente Ansiosa' 
             style={{ width:'100%', height:'100%', objectFit:'cover', borderRadius:'2px', boxShadow:'0 20px 60px rgba(74,63,63,0.15)' }} 
             referrerPolicy="no-referrer" 

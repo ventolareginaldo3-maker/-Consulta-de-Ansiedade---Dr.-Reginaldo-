@@ -62,17 +62,33 @@ export const AdoecimentoSilencioso = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="space-y-6 text-center lg:text-left"
           >
-            <blockquote className="font-serif text-3xl md:text-5xl italic text-clinic-text-primary leading-tight m-0 text-center lg:text-left">
-              "A ansiedade não define quem você é, ela mostra que sua mente está presa em um padrão que pode ser mudado."
-            </blockquote>
-            <div className="mt-8 space-y-6 text-lg text-clinic-text-secondary font-light leading-relaxed text-center lg:text-left">
+            <h2 className="font-serif text-3xl md:text-5xl text-clinic-text-primary leading-tight tracking-tight">
+              A ansiedade não define quem você é
+            </h2>
+            <div className="space-y-4 text-sm lg:text-base text-clinic-text-secondary font-light leading-relaxed">
               <p>
-                Você não precisa continuar vivendo refém desse ciclo silencioso que rouba sua paz, seu foco e sua segurança.
+                Ela apenas mostra que sua mente aprendeu a funcionar em um padrão de alerta que pode ser compreendido, cuidado e transformado.
               </p>
-              <p className="font-medium text-clinic-text-primary">
-                Mas tudo começa com um passo simples: Reconhecer os sinais que mostram que sua mente ainda está presa nesse padrão.
+              <p>
+                Você não precisa continuar vivendo como se algo estivesse sempre prestes a acontecer.<br />
+                Nem carregar sozinha essa tension silenciosa que afeta sua paz, seu foco, seu sono e sua segurança interna.
               </p>
+              <p>
+                O primeiro passo não é lutar contra a ansiedade.<br />
+                É reconhecer os sinais que mostram onde a sua mente ainda está tentando se proteger.
+              </p>
+              <p className="font-normal text-clinic-text-primary">
+                Quando você entende o padrão, deixa de se culpar pelo sintoma.<br />
+                E começa a abrir espaço para uma forma mais leve, consciente e segura de viver.
+              </p>
+            </div>
+            
+            <div className="pt-4">
+              <Link to="/triagem" className="inline-flex items-center justify-center px-8 py-3.5 bg-clinic-brand-primary text-white rounded-full font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-clinic-brand-dark transition-all shadow-md animate-cta-pulse">
+                Quero reconhecer meus sinais
+              </Link>
             </div>
           </motion.div>
           
@@ -83,9 +99,9 @@ export const AdoecimentoSilencioso = () => {
             className="relative"
           >
             <img 
-              src="https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776954021/criativo-acalme-se-aspiration-feed_17_pxavwq.png" 
-              alt="Método Acalme-se - Compreensão" 
-              className="w-full rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.1)]"
+              src="https://res.cloudinary.com/djl7c37my/image/upload/v1781982985/Ansiedade_sintomas_Psiquiatra_Mococa_2_c5ew5d.png" 
+              alt="A ansiedade não define quem você é" 
+              className="w-full rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:scale-105 transition-transform duration-[1500ms] ease-out"
               referrerPolicy="no-referrer"
               loading="lazy"
             />
@@ -182,25 +198,39 @@ export const AdoecimentoSilencioso = () => {
              </div>
              <div className="space-y-4 lg:space-y-6 relative z-10">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light leading-tight">O Ciclo <br/><span className="italic font-light text-rose">Silencioso</span></h3>
-              <div className="space-y-4 text-base lg:text-lg font-light leading-relaxed">
-                <p>Muitas pessoas com ansiedade vivem um loop que se retroalimenta diariamente:</p>
-                <ul className="space-y-2 italic font-serif opacity-90">
-                  <li className="flex gap-2"><span>•</span> <span>Antecipam problemas que nunca acontecem</span></li>
-                  <li className="flex gap-2"><span>•</span> <span>Imaginam sempre o pior cenário possível</span></li>
-                  <li className="flex gap-2"><span>•</span> <span>Sentem medo e tensão física constante</span></li>
-                  <li className="flex gap-2"><span>•</span> <span>Evitam situações por insegurança</span></li>
-                  <li className="flex gap-2"><span>•</span> <span>A mente interpreta o alívio temporário como confirmação de perigo</span></li>
+              <div className="space-y-4 text-sm lg:text-base font-light leading-relaxed">
+                <p className="text-white/90">
+                  A ansiedade nem sempre aparece como uma crise intensa.<br />
+                  Muitas vezes, ela se instala como um modo de viver.
+                </p>
+                <p className="text-[#D4B8AE]">
+                  A mente tenta prever tudo.<br />
+                  O corpo permanece em alerta.<br />
+                  E cada pequeno alívio parece confirmar que havia mesmo algo a temer.
+                </p>
+                <p className="text-white/95 font-medium">
+                  Esse ciclo pode se repetir todos os dias, quase sem ser percebido:
+                </p>
+                <ul className="space-y-2 italic font-serif text-[#D4B8AE] opacity-90 pl-1">
+                  <li className="flex gap-2"><span>•</span> <span>antecipa problemas que talvez nunca aconteçam</span></li>
+                  <li className="flex gap-2"><span>•</span> <span>imagina o pior cenário como tentativa de se proteger</span></li>
+                  <li className="flex gap-2"><span>•</span> <span>mantém o corpo em tension constante</span></li>
+                  <li className="flex gap-2"><span>•</span> <span>evita situações por medo de não conseguir lidar</span></li>
+                  <li className="flex gap-2"><span>•</span> <span>interpreta o alívio momentâneo como prova de que o perigo era real</span></li>
                 </ul>
-                <p className="text-xl font-serif text-rose not-italic underline underline-offset-8 decoration-white/30">Vive o tempo todo sob ameaça.</p>
+                <p className="text-base lg:text-lg font-serif text-rose not-italic mt-4 border-t border-white/10 pt-4 leading-relaxed">
+                  Aos poucos, a vida deixa de ser vivida no presente.<br />
+                  E passa a ser atravessada como se algo estivesse sempre prestes a acontecer.
+                </p>
               </div>
              </div>
           </div>
           <div className="relative h-full min-h-[400px] lg:min-h-0">
             <div className="h-full rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden shadow-2xl">
               <img 
-                src="https://res.cloudinary.com/dx77zgslr/image/upload/f_auto,q_auto/v1776954748/Esgotamento-_burnout-Ansiedade-Mococa-Psiquiatra_qbq7f6.png" 
+                src="https://res.cloudinary.com/djl7c37my/image/upload/v1781981459/Ansiedade_sintomas_zlnm7e.png" 
                 alt="O Ciclo Silencioso do Medo" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[2000ms]"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms] ease-out"
                 referrerPolicy="no-referrer"
                 loading="lazy"
               />

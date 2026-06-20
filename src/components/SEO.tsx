@@ -12,7 +12,7 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({ 
-  title = "Ansiedade Mococa | Dr. Reginaldo Ventola: Método Acalme-se", 
+  title = "Ansiedade Mococa | Dr. Reginaldo Vêntola: Método Acalme-se", 
   description = "Especialista em ansiedade em Mococa/SP. Tratamento especializado para ansiedade, pânico e depressão através da Psicanálise e Hipnoterapia. Se você busca por um psicanalista em Mococa, conheça o Método Acalme-se.",
   canonical,
   ogType = "website",
@@ -51,7 +51,7 @@ const SEO: React.FC<SEOProps> = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": ["MedicalBusiness", "Physician"],
-          "name": "Dr. Reginaldo Ventola - Psicanalista e Especialista em Ansiedade em Mococa",
+          "name": "Dr. Reginaldo Vêntola - Psicanalista e Especialista em Ansiedade em Mococa",
           "alternateName": "Método Acalme-se",
           "image": ogImage,
           "description": description,

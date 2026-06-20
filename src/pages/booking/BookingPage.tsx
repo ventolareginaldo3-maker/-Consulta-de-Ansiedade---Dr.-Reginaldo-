@@ -118,8 +118,8 @@ const Booking = () => {
   return (
     <section className="pt-24 lg:pt-32 pb-20 px-6 max-w-4xl mx-auto min-h-screen">
       <Helmet>
-        <title>Agendar Consulta | Dr. Reginaldo Ventola</title>
-        <meta name="description" content="Agende sua consulta com o Dr. Reginaldo Ventola e inicie sua jornada de resgate emocional com o Método Acalme-se." />
+        <title>Agendar Consulta | Dr. Reginaldo Vêntola</title>
+        <meta name="description" content="Agende sua consulta com o Dr. Reginaldo Vêntola e inicie sua jornada de resgate emocional com o Método Acalme-se." />
         <link rel="canonical" href={window.location.origin + "/agendar"} />
       </Helmet>
       <motion.div

@@ -109,58 +109,48 @@ export const MainCTASection = () => {
 
         <div className="mt-20 pt-20 border-t border-white/10 w-full">
           <div className="max-w-6xl mx-auto mb-24 px-4 md:px-0">
-            <div className="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-[3rem] border border-white/10 bg-brand-ink/40 items-stretch">
-              {/* IMAGEM DO PROFISSIONAL */}
-              <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="hidden lg:block min-h-[600px]"
-              >
-                <div className="h-full w-full relative">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 p-8 md:p-14 rounded-[3rem] border border-white/10 bg-brand-ink/40 text-left relative overflow-hidden backdrop-blur-sm">
+              {/* IMAGEM DO FUNDADOR */}
+              <div className="w-full md:w-2/5 flex justify-center shrink-0">
+                <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-brand-accent/20">
                   <img 
-                    src="https://res.cloudinary.com/djl7c37my/image/upload/v1777042123/31C6BAD6-F164-41A6-9A84-E30508C3A343_e9f1bh.jpg" 
-                    alt="Dr. Reginaldo Ventola" 
-                    className="absolute inset-0 w-full h-full object-cover object-[center_top] grayscale hover:grayscale-0 transition-all duration-[2000ms]"
+                    src="https://res.cloudinary.com/djl7c37my/image/upload/v1780252691/Gemini_Generated_Image_h03i37h03i37h03i_grkrmy.png" 
+                    alt="Nota do Fundador - Dr. Reginaldo Vêntola" 
+                    className="w-full h-full object-contain bg-brand-ink/60"
                     referrerPolicy="no-referrer"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-brand-ink/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/40 to-transparent" />
                 </div>
-              </motion.div>
+              </div>
 
               {/* CONTEÚDO DO RECADO */}
-              <motion.div 
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="flex flex-col justify-center p-10 lg:p-20 relative"
-              >
-                <div className="absolute top-0 left-0 w-2 h-20 bg-brand-accent/30 hidden lg:block" />
+              <div className="flex-1 md:pl-4 relative">
+                <div className="absolute -left-6 top-10 w-1 h-16 bg-brand-accent/30 hidden md:block" />
                 
                 <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-8">
+                  <div className="flex items-center gap-4 mb-6">
                     <div className="h-px w-8 bg-brand-accent" />
                     <span className="text-brand-accent text-[10px] uppercase tracking-[0.5em] font-black">Nota do Fundador</span>
                   </div>
                   
-                  <div className="text-2xl lg:text-3xl font-serif italic leading-[1.6] text-white/95 space-y-10">
+                  <div className="text-lg lg:text-xl font-serif italic leading-relaxed text-white/95 space-y-6">
                     <p className="relative">
-                      <span className="absolute -left-8 -top-4 text-6xl text-brand-accent/20 font-serif leading-none">"</span>
+                      <span className="absolute -left-8 -top-4 text-5xl text-brand-accent/20 font-serif leading-none">"</span>
                       Se você chegou até aqui, sua mente já compreendeu que não é mais possível sustentar esse ciclo sozinha. Como seu Agente de Transformação, eu não olho apenas para os seus sintomas; eu analiso a estrutura profunda da sua dor.
                     </p>
                     <p>
                       O que você encontrará a seguir não é uma teoria reconfortante, mas uma prática clínica deliberada. Projetamos cada etapa para que a sua compreensão se transforme em mudança real. A estrutura para sua liberdade emocional está pronta. O próximo passo é o início do seu retorno para si mesma.
-                      <span className="inline-block text-6xl text-brand-accent/20 font-serif leading-none translate-y-4 ml-2">"</span>
+                      <span className="inline-block text-5xl text-brand-accent/20 font-serif leading-none translate-y-3 ml-1">"</span>
                     </p>
                   </div>
 
-                  <div className="mt-16 pt-10 border-t border-white/5 flex flex-col items-start gap-4">
-                    <div className="text-brand-accent font-serif text-2xl italic">Dr. Reginaldo Ventola</div>
+                  <div className="mt-10 pt-6 border-t border-white/5 flex flex-col items-start gap-2">
+                    <div className="text-brand-accent font-serif text-xl italic">Dr. Reginaldo Vêntola</div>
                     <div className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Psicanalista & Especialista em Ansiedade</div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
 

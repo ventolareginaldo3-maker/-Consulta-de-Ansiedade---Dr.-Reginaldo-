@@ -27,15 +27,15 @@ const Home = () => {
   return (
     <main>
       <SEO 
-        title="Tratamento de Ansiedade em Mococa | Dr. Reginaldo Ventola | Psicanalista"
-        description="Dr. Reginaldo Ventola é Psicanalista em Mococa/SP e criador do Método Acalme-se. Especialista no tratamento profundo e integrativo da ansiedade e esgotamento."
+        title="Tratamento de Ansiedade em Mococa | Dr. Reginaldo Vêntola | Psicanalista"
+        description="Dr. Reginaldo Vêntola é Psicanalista em Mococa/SP e criador do Método Acalme-se. Especialista no tratamento profundo e integrativo da ansiedade e esgotamento."
         keywords="psicanalista mococa, psicanalista em mococa, ansiedade mococa, psicanálise mococa, tratamento ansiedade mococa, saude mental mococa, método acalme-se, psiquiatra ou psicanalista"
         canonical={window.location.origin}
         ogImage="https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777041959/Psiquiatra_Mococa_j0pzl6.png"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          "name": "Dr. Reginaldo Ventola - Psicanálise e Método Acalme-se",
+          "name": "Dr. Reginaldo Vêntola - Psicanálise e Método Acalme-se",
           "image": "https://res.cloudinary.com/djl7c37my/image/upload/f_auto,q_auto/v1777041959/Psiquiatra_Mococa_j0pzl6.png",
           "description": "Psicanálise e tratamento integrativo de ansiedade em Mococa/SP através do Método Acalme-se.",
           "telephone": "+5519992416095",

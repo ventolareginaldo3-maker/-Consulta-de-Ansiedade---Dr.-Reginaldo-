@@ -7,8 +7,8 @@ const SobrePage = () => {
   return (
     <section className="min-h-screen bg-brand-paper pt-32 pb-20 px-6">
       <SEO 
-        title="Sobre o Dr. Reginaldo Ventola | Psicanalista e Hipnoterapeuta em Mococa"
-        description="Conheça a trajetória do Dr. Reginaldo Ventola, especialista no tratamento de ansiedade em Mococa. Doutor em Psicanálise, Hipnoterapeuta e Naturopata em Mococa/SP."
+        title="Sobre o Dr. Reginaldo Vêntola | Psicanalista e Hipnoterapeuta em Mococa"
+        description="Conheça a trajetória do Dr. Reginaldo Vêntola, especialista no tratamento de ansiedade em Mococa. Doutor em Psicanálise, Hipnoterapeuta e Naturopata em Mococa/SP."
         canonical="https://www.metodoacalmese.com.br/sobre"
         keywords="dr reginaldo ventola, psicanalista mococa, hipnoterapeuta mococa, especialista ansiedade mococa, psiquiatra mococa, psicologo mococa"
       />

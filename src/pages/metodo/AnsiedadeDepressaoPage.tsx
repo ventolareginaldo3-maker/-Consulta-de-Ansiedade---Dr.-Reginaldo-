@@ -89,7 +89,7 @@ const AnsiedadeDepressaoPage = () => {
             <div className="relative aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl skew-y-1">
               <img 
                 src="https://res.cloudinary.com/djl7c37my/image/upload/v1777042123/31C6BAD6-F164-41A6-9A84-E30508C3A343_e9f1bh.jpg" 
-                alt="Dr. Reginaldo Ventola - Psicanalista em Mococa"
+                alt="Dr. Reginaldo Vêntola - Psicanalista em Mococa"
                 className="w-full h-full object-cover object-[center_top] transition-all duration-1000"
                 referrerPolicy="no-referrer"
               />
@@ -111,13 +111,13 @@ const AnsiedadeDepressaoPage = () => {
               Entenda o <span className="italic text-brand-accent">Mecanismo do Medo</span>
             </h2>
             <p className="text-xl text-brand-ink/70 font-light max-w-2xl mx-auto">
-              Assista ao vídeo onde Dr. Reginaldo Ventola explica como sua mente entra em estado de alerta e como o Método Acalme-se pode te ajudar.
+              Assista ao vídeo onde Dr. Reginaldo Vêntola explica como sua mente entra em estado de alerta e como o Método Acalme-se pode te ajudar.
             </p>
           </div>
           <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl bg-brand-ink">
             <YouTubeEmbed 
               videoId="MWNWB8HT3fY" 
-              title="Entenda a Ansiedade - Dr. Reginaldo Ventola" 
+              title="Entenda a Ansiedade - Dr. Reginaldo Vêntola" 
             />
           </div>
         </div>

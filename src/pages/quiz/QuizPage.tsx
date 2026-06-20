@@ -89,7 +89,7 @@ Gostaria de falar com um especialista.`;
       
       const ai = new GoogleGenAI({ apiKey });
       
-      const prompt = `Você é o Dr. Reginaldo Ventola, psicanalista e especialista em ansiedade feminina. 
+      const prompt = `Você é o Dr. Reginaldo Vêntola, psicanalista e especialista em ansiedade feminina. 
       Analise as respostas da triagem clínica abaixo de uma mulher que está buscando o Método Acalme-se:
       
       DADOS DO LEAD:
@@ -119,7 +119,7 @@ Gostaria de falar com um especialista.`;
         model: "gemini-flash-latest",
         contents: prompt,
         config: {
-          systemInstruction: "Você é o Dr. Reginaldo Ventola, um psicanalista experiente e criador do Método Acalme-se. Sua voz é acolhedora, poética e profissional. Você foca no resgate da essência e na leveza, evitando diagnósticos médicos.",
+          systemInstruction: "Você é o Dr. Reginaldo Vêntola, um psicanalista experiente e criador do Método Acalme-se. Sua voz é acolhedora, poética e profissional. Você foca no resgate da essência e na leveza, evitando diagnósticos médicos.",
           temperature: 0.7,
         }
       });
@@ -289,7 +289,7 @@ Gostaria de falar com um especialista.`;
                   </div>
                   <div className="text-right hidden md:block">
                     <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold">MÉTODO ACALME-SE</p>
-                    <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold">Dr. Reginaldo Ventola</p>
+                    <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold">Dr. Reginaldo Vêntola</p>
                   </div>
                 </header>
 
@@ -301,7 +301,7 @@ Gostaria de falar com um especialista.`;
 
                 <div className="mt-12 pt-8 border-t border-brand-ink/10 flex flex-col items-center">
                   <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand-ink/40 mb-2">Responsável Técnico</p>
-                  <p className="font-serif italic text-lg">Dr. Reginaldo Ventola</p>
+                  <p className="font-serif italic text-lg">Dr. Reginaldo Vêntola</p>
                 </div>
               </div>
 

@@ -13,7 +13,7 @@ const AnsiedadeMococaSEOPage = () => {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Dr. Reginaldo Ventola - Psicanalista em Mococa",
+    "name": "Dr. Reginaldo Vêntola - Psicanalista em Mococa",
     "description": "Atendimento psicanalítico especializado em ansiedade e depressão para mulheres em Mococa/SP",
     "address": {
       "@type": "PostalAddress",
@@ -87,7 +87,7 @@ const AnsiedadeMococaSEOPage = () => {
               <div className="aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl shadow-clinic-brand-primary/20 border-4 border-white group bg-white relative">
                 <img 
                   src="https://res.cloudinary.com/djl7c37my/image/upload/v1777042123/31C6BAD6-F164-41A6-9A84-E30508C3A343_e9f1bh.jpg" 
-                  alt="Psicanalista em Mococa - Dr. Reginaldo Ventola" 
+                  alt="Psicanalista em Mococa - Dr. Reginaldo Vêntola" 
                   className="w-full h-full object-cover object-[center_top] transition-transform duration-1000 group-hover:scale-110 relative z-40"
                   referrerPolicy="no-referrer"
                   loading="eager"
@@ -206,14 +206,14 @@ const AnsiedadeMococaSEOPage = () => {
                   Tratamento de Ansiedade em Mococa
                 </h2>
                 <p className="max-w-3xl mx-auto text-lg text-brand-ink/70 font-light leading-relaxed">
-                  Dr. Reginaldo Ventola oferece em Mococa/SP um atendimento que une a profundidade da psicanálise com técnicas integrativas modernas, proporcionando um resgate emocional completo. Assista ao vídeo abaixo para entender como funciona.
+                  Dr. Reginaldo Vêntola oferece em Mococa/SP um atendimento que une a profundidade da psicanálise com técnicas integrativas modernas, proporcionando um resgate emocional completo. Assista ao vídeo abaixo para entender como funciona.
                 </p>
               </div>
               
               <div className="relative aspect-video bg-brand-ink rounded-[2rem] lg:rounded-[4rem] overflow-hidden shadow-2xl border border-brand-ink/5">
                 <YouTubeEmbed 
                   videoId="MWNWB8HT3fY" 
-                  title="Apresentação Dr. Reginaldo Ventola - Método Acalme-se" 
+                  title="Apresentação Dr. Reginaldo Vêntola - Método Acalme-se" 
                 />
               </div>
             </div>
@@ -489,9 +489,9 @@ const AnsiedadeMococaSEOPage = () => {
 
       <footer className="py-20 bg-clinic-bg-dark text-white text-center px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto space-y-6 opacity-60">
-          <p className="text-sm font-serif italic text-clinic-brand-primary">Método Acalme-se por Dr. Reginaldo Ventola</p>
+          <p className="text-sm font-serif italic text-clinic-brand-primary">Método Acalme-se por Dr. Reginaldo Vêntola</p>
           <div className="text-[10px] uppercase tracking-[0.3em] font-black space-y-2">
-            <p>Dr. Reginaldo Ventola - Psicanalista em Mococa</p>
+            <p>Dr. Reginaldo Vêntola - Psicanalista em Mococa</p>
             <p>Registro SPMR 0152021/SP | Todos os direitos reservados © 2026</p>
           </div>
         </div>

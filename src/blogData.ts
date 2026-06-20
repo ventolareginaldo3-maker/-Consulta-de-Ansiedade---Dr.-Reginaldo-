@@ -523,7 +523,7 @@ Se você tem alguém na família sofrendo, incentive-o a fazer sua triagem gratu
 O médico psiquiatra é fundamental quando há desequilíbrios químicos severos que impedem a pessoa de realizar atividades básicas. Se você precisa de regulação medicamentosa imediata, a busca por um psiquiatra em Mococa é o caminho correto.
 
 ### O papel do Psicanalista no tratamento da Ansiedade
-Enquanto o psiquiatra trabalha na modulação biológica, o Psicanalista investiga as causas raízes. No Método Acalme-se conduzido pelo Dr. Reginaldo Ventola em Mococa, trabalhamos o que o remédio não alcança:
+Enquanto o psiquiatra trabalha na modulação biológica, o Psicanalista investiga as causas raízes. No Método Acalme-se conduzido pelo Dr. Reginaldo Vêntola em Mococa, trabalhamos o que o remédio não alcança:
 *   Gatilhos Emocionais: Por que sua ansiedade dispara em certos momentos?
 *   Traumas do Inconsciente: O que sua mente está tentando esconder através do pânico?
 *   Reprogramação de Hábitos: Como viver sem depender exclusivamente de muletas químicas a longo prazo?
@@ -561,7 +561,7 @@ Muitas pessoas em Mococa buscam apenas "alívio imediato", mas um tratamento efi
 
 ### A importância de um especialista local
 
-Ter um especialista em Mococa/SP permite um acompanhamento mais próximo, seja presencial ou online com a segurança de um profissional que conhece a realidade da nossa região. Dr. Reginaldo Ventola oferece esse suporte especializado, focado no público feminino que busca recuperar a paz de espírito.
+Ter um especialista em Mococa/SP permite um acompanhamento mais próximo, seja presencial ou online com a segurança de um profissional que conhece a realidade da nossa região. Dr. Reginaldo Vêntola oferece esse suporte especializado, focado no público feminino que busca recuperar a paz de espírito.
 
 ---
 

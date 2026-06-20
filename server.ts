@@ -244,7 +244,7 @@ async function startServer() {
           price_data: {
             currency: "brl",
             product_data: { 
-              name: "Consulta Psicanalítica - Dr. Reginaldo Ventola", 
+              name: "Consulta Psicanalítica - Dr. Reginaldo Vêntola", 
               description: `Sessão para ${date} às ${time}` 
             },
             unit_amount: 15000,
