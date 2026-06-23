@@ -12,8 +12,6 @@ import { analytics } from './services/analytics';
 
 // Main pages - loaded immediately for speed on initial entry
 import Home from './pages/home/Home';
-import AnsiedadeFemininaPage from './pages/ansiedade-feminina/AnsiedadeFemininaPage';
-import SaudeEmocionalFemininaPage from './pages/saude-emocional-feminina/SaudeEmocionalFemininaPage';
 
 // Lazy load non-critical pages and widgets
 const AIAssistant = lazy(() => import('./components/ui/AIAssistant').then(m => ({ default: m.AIAssistant })));
@@ -38,6 +36,8 @@ const IridologiaPage = lazy(() => import('./pages/metodo/IridologiaPage'));
 const AnsiedadeMococaLP = lazy(() => import('./pages/metodo/AnsiedadeMococaLP'));
 const AnsiedadeMococaSEO = lazy(() => import('./pages/metodo/AnsiedadeMococaSEOPage'));
 const AdoecimentoSilenciosoPage = lazy(() => import('./pages/metodo/AdoecimentoSilenciosoPage'));
+const AnsiedadeFemininaPage = lazy(() => import('./pages/ansiedade-feminina/AnsiedadeFemininaPage'));
+const SaudeEmocionalFemininaPage = lazy(() => import('./pages/saude-emocional-feminina/SaudeEmocionalFemininaPage'));
 const NotFound = lazy(() => import('./pages/error/NotFound'));
 
 const LoadingFallback = () => (
