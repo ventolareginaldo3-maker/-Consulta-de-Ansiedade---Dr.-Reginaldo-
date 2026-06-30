@@ -523,7 +523,7 @@ const SaudeEmocionalFemininaPage = () => {
             </a>
           </div>
           <div className="pt-8 text-[11px] uppercase tracking-widest text-clinic-brand-primary font-medium">
-            Método Acalme-se — Cuidado com Alma e Ciência
+            Método Acalme-se: Cuidado com Alma e Ciência
           </div>
         </div>
       </section>

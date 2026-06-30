@@ -5,8 +5,8 @@ const MenteAnsiosaPage = () => {
   return (
     <section style={{ backgroundColor: '#F5F1ED', padding: '10rem 2rem 6rem', fontFamily: "'Inter', -apple-system, sans-serif" }}>
       <SEO 
-        title="O que você chama de ansiedade é sua mente pedindo socorro | Método Acalme se"
-        description="Entenda o mecanismo por trás da ansiedade e como sua mente pede socorro. O primeiro passo para a cura é o reconhecimento."
+        title="Mente Ansiosa: Psicanalista em Mococa"
+        description="Entenda os mecanismos de uma mente ansiosa e como o psicanalista Dr. Reginaldo Vêntola trata a raiz do sofrimento em Mococa."
         canonical="https://www.metodoacalmese.com.br/mente-ansiosa"
       />
       

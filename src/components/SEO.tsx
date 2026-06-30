@@ -21,7 +21,7 @@ const SEO: React.FC<SEOProps> = ({
   structuredData
 }) => {
   const currentUrl = canonical || window.location.href;
-  const siteTitle = title.includes("Método Acalme se") ? title : `${title} | Método Acalme se`;
+  const siteTitle = title;
 
   return (
     <Helmet>

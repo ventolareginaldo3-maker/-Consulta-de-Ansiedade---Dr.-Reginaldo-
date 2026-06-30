@@ -44,8 +44,9 @@ const AnsiedadeSobControlePage = () => {
   return (
     <main className="min-h-screen bg-brand-paper pt-32 pb-20 px-6">
       <Helmet>
-        <title>Checklist: Ansiedade Sob Controle | Método Acalme-se</title>
-        <meta name="description" content="Siga este checklist diário para manter sua ansiedade sob controle e retomar o domínio da sua vida." />
+        <title>Ansiedade Sob Controle: Terapia em Mococa</title>
+        <meta name="description" content="Aprenda técnicas e práticas para manter sua ansiedade sob controle em Mococa. Conheça a abordagem do psicanalista Dr. Reginaldo Vêntola." />
+        <link rel="canonical" href="https://www.metodoacalmese.com.br/ansiedade-sob-controle" />
       </Helmet>
 
       <div className="max-w-4xl mx-auto">

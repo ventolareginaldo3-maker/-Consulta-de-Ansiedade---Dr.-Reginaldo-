@@ -13,10 +13,10 @@ const AnsiedadeMococaLP = () => {
   return (
     <article className="min-h-screen bg-clinic-bg-primary selection:bg-clinic-brand-primary/20 selection:text-clinic-text-primary">
       <SEO 
-        title="Psicanalista em Mococa | Tratamento Especializado para Ansiedade e Depressão"
-        description="Especialista em ansiedade em Mococa/SP. Tratamento profundo para ansiedade, pânico e depressão. Psicanálise humanizada para acolher o sofrimento na origem."
+        title="Ansiedade Mococa: Tratamento com Psicanalista"
+        description="Tratamento especializado para ansiedade em Mococa com o psicanalista Dr. Reginaldo Vêntola. Conheça o Método Acalme-se e recupere seu equilíbrio."
         keywords="psicanalista mococa, ansiedade mococa, depressão mococa, tratamento ansiedade mococa, saúde mental mococa, psicanálise mococa"
-        canonical="https://www.metodoacalmese.com.br/ansiedade-mococa"
+        canonical="https://www.metodoacalmese.com.br/ansiedade-mococa-lp"
       />
 
       {/* HERO SECTION */}

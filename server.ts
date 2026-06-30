@@ -149,6 +149,19 @@ async function startServer() {
     });
   });
 
+  // ROTA PARA DOWNLOAD DO ZIP DO CODIGO-FONTE COMPLETO (-main.zip)
+  app.get("/Consulta-Ansiedade-Dr-Reginaldo-main.zip", (req, res) => {
+    const zipPath = path.join(process.cwd(), "Consulta-Ansiedade-Dr-Reginaldo-main.zip");
+    res.setHeader("Content-Type", "application/zip");
+    res.setHeader("Content-Disposition", "attachment; filename=Consulta-Ansiedade-Dr-Reginaldo-main.zip");
+    res.sendFile(zipPath, (err) => {
+      if (err) {
+        console.error("Erro ao enviar o ZIP do codigo-fonte:", err);
+        res.status(404).send("<h1>Arquivo ZIP do codigo-fonte nao encontrado</h1>");
+      }
+    });
+  });
+
   // Explicit check for APP_URL to avoid malformed links
   const appUrl = process.env.APP_URL || '';
   if (!appUrl && !isDev) {

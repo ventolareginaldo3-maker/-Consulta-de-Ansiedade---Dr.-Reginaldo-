@@ -35,7 +35,7 @@ const AboutProfessional = () => {
         
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-8 leading-[1.1] lg:leading-[0.9] tracking-tighter text-brand-ink">
           Dr. Reginaldo Vêntola <br />
-          <span className="italic font-light text-brand-accent">Doutor em Psicanálise</span>
+          <span className="italic font-light text-brand-accent">Doutor Honoris Causa em Psicanálise</span>
         </h2>
         
         <div className="space-y-6 text-lg lg:text-xl text-brand-ink/80 leading-relaxed mb-10">

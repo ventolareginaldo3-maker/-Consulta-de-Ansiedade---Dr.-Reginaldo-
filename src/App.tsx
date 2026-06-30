@@ -8,8 +8,6 @@ import { WhatsAppButton } from './components/ui/WhatsAppButton';
 import { BackButton } from './components/ui/BackButton';
 import ScrollToTop from './components/ScrollToTop';
 
-import { analytics } from './services/analytics';
-
 // Main pages - loaded immediately for speed on initial entry
 import Home from './pages/home/Home';
 
@@ -52,7 +50,9 @@ function App() {
     
     // Initialize analytics after initial render to prioritize speed
     const timer = setTimeout(() => {
-      analytics.init();
+      import('./services/analytics').then(({ analytics }) => {
+        analytics.init();
+      });
     }, 3000);
 
     return () => clearTimeout(timer);

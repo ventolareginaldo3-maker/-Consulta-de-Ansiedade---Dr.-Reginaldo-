@@ -14,9 +14,9 @@ const MetodoAcalmesePage = () => {
   return (
     <section className="min-h-screen bg-white">
       <SEO 
-        title="Método Acalme-se Mococa | Psicanálise, Hipnoterapia e Naturopatia"
-        description="Tratamento para ansiedade em Mococa com Psicanálise e Hipnoterapia. Uma abordagem profunda que complementa e potencializa resultados de quem busca psiquiatra em Mococa."
-        canonical="https://www.metodoacalmese.com.br/metodo-e-tratamento"
+        title="Método Acalme-se: Terapia Ansiedade Mococa"
+        description="Conheça o Método Acalme-se, terapia para ansiedade em Mococa desenvolvida pelo psicanalista Dr. Reginaldo Vêntola. Resgate sua paz interior."
+        canonical="https://www.metodoacalmese.com.br/metodo-acalmese"
         keywords="psiquiatra mococa, psiquiatria mococa, psicólogo mococa, psicanálise mococa, tratamento ansiedade mococa, hipnoterapia mococa, método acalme-se"
       />
 

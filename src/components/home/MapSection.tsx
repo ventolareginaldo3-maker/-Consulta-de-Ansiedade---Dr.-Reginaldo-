@@ -31,7 +31,7 @@ export const MapSection = () => {
                     rel="noopener noreferrer"
                     className="text-lg lg:text-xl hover:text-brand-accent transition-colors underline decoration-brand-accent/30 leading-tight block"
                   >
-                    Rua XV de Novembro, 268, Sala 10 – Centro
+                    Rua XV de Novembro, 268, Sala 10, Centro
                   </a>
                 </div>
               </div>

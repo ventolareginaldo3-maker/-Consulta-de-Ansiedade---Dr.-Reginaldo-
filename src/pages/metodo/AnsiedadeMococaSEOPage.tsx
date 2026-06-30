@@ -30,8 +30,9 @@ const AnsiedadeMococaSEOPage = () => {
   return (
     <main className="min-h-screen bg-clinic-bg-primary selection:bg-clinic-brand-primary/20 selection:text-clinic-text-primary">
       <Helmet>
-        <title>Atendimento com Psicanalista para Ansiedade em Mococa | Dr. Reginaldo</title>
-        <meta name="description" content="Psicanalista em Mococa especializado em ansiedade e suporte à redução de medicação (com orientação médica). Recupere sua paz interior." />
+        <title>Tratamento Ansiedade Mococa | Terapia Integrativa</title>
+        <meta name="description" content="Tratamento integrativo da ansiedade em Mococa com Dr. Reginaldo Vêntola. Psicanálise, hipnoterapia e naturopatia para resgate emocional profundo." />
+        <link rel="canonical" href="https://www.metodoacalmese.com.br/ansiedade-mococa-seo-page" />
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>
@@ -317,7 +318,7 @@ const AnsiedadeMococaSEOPage = () => {
               <div key={i} className="bg-white p-10 rounded-[3rem] shadow-xl shadow-clinic-brand-primary/5 border border-clinic-border-subtle italic relative">
                 <span className="absolute top-6 left-6 text-6xl text-clinic-brand-primary/10 font-serif">"</span>
                 <p className="text-lg text-clinic-text-secondary leading-relaxed mb-6 relative z-10">{dep.text}</p>
-                <cite className="block font-bold text-clinic-text-primary not-italic text-sm uppercase tracking-widest">— {dep.author}</cite>
+                <cite className="block font-bold text-clinic-text-primary not-italic text-sm uppercase tracking-widest">{dep.author}</cite>
               </div>
             ))}
           </div>
@@ -442,7 +443,7 @@ const AnsiedadeMococaSEOPage = () => {
                   <div className="w-12 h-12 bg-white rounded-2xl shadow-sm border border-clinic-border-subtle flex items-center justify-center text-clinic-brand-primary">📍</div>
                   <div>
                     <p className="font-bold text-clinic-text-primary mb-1">Consultório Físico</p>
-                    <p className="text-sm font-light text-clinic-text-secondary text-left">Rua XV de Novembro, 268, Sala 10 – Centro<br />Mococa/SP</p>
+                    <p className="text-sm font-light text-clinic-text-secondary text-left">Rua XV de Novembro, 268, Sala 10, Centro<br />Mococa/SP</p>
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">

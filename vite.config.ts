@@ -27,10 +27,15 @@ export default defineConfig(({mode}) => {
     build: {
       rollupOptions: {
         output: {
-          manualChunks: {
-            'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-            'vendor-ui': ['lucide-react'],
-            'vendor-utils': ['react-helmet-async', 'clsx', 'tailwind-merge'],
+          manualChunks(id) {
+            if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) return 'vendor-react';
+            if (id.includes('node_modules/react-router')) return 'vendor-router';
+            if (id.includes('node_modules/firebase') || id.includes('node_modules/@firebase')) return 'vendor-firebase';
+            if (id.includes('node_modules/@stripe') || id.includes('node_modules/stripe')) return 'vendor-stripe';
+            if (id.includes('node_modules/@google') || id.includes('node_modules/google')) return 'vendor-google';
+            if (id.includes('node_modules/framer-motion') || id.includes('node_modules/motion')) return 'vendor-motion';
+            if (id.includes('node_modules/lucide-react')) return 'vendor-icons';
+            if (id.includes('node_modules/')) return 'vendor-misc';
           },
         },
       },

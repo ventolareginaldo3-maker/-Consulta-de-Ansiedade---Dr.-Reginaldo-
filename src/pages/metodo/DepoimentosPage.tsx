@@ -50,8 +50,9 @@ const DepoimentosPage = () => {
   return (
     <main className="min-h-screen bg-brand-paper pt-32 pb-20 px-6">
       <Helmet>
-        <title>Depoimentos e Resultados | Método Acalme-se</title>
-        <meta name="description" content="Veja os resultados e depoimentos de pacientes que transformaram suas vidas com o Método Acalme-se do Dr. Reginaldo Vêntola em Mococa." />
+        <title>Depoimentos: Tratamento Ansiedade Mococa</title>
+        <meta name="description" content="Veja relatos e depoimentos de quem superou a ansiedade em Mococa com o Método Acalme-se do psicanalista Dr. Reginaldo Vêntola." />
+        <link rel="canonical" href="https://www.metodoacalmese.com.br/depoimentos" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto">
